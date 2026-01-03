@@ -69,12 +69,13 @@ A highly configured, minimal, and aesthetic collection of dotfiles for the [Niri
 Keybindings are defined in `niri/config.kdl`. Some common defaults include:
 
 *   `Super + Enter`: Open Terminal
-*   `Super + D`: Open Launcher (Fuzzel)
+*   `Super + Space`: Open Launcher (Fuzzel)
 *   `Super + Q`: Close Window
 *   `Super + Shift + E`: Power Menu (Wlogout)
+*   `Super + B`: Browser(brave)
+*   `Super + C`:Editor (Vs Code)
 
 ## Credits
 
-*   **Wallpaper:** [Link to wallpaper if known]
 *   **NvChad:** [NvChad](https://nvchad.com/)
 *   **Niri:** [YaLTeR/niri](https://github.com/YaLTeR/niri)
