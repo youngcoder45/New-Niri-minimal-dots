@@ -6,7 +6,6 @@ A highly configured, minimal, and aesthetic collection of dotfiles for the [Niri
 
 ![Desktop Overview](Screenshots/image.png)
 ![Terminal Workflow](Screenshots/image2.png)
-![Application Launcher](Screenshots/image3.png)
 ![System Monitor](Screenshots/image4.png)
 ![Editor](Screenshots/image5.png)
 ![Lock Screen](Screenshots/image6.png)
