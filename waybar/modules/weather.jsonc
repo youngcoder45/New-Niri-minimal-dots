@@ -1,0 +1,10 @@
+{
+  // ───────── Weather ─────────
+  "custom/weather": {
+    "exec": "~/.config/waybar/scripts/weather.sh",
+    "return-type": "json",
+    "interval": 1800,
+    "tooltip": true,
+    "on-click": "~/.config/waybar/scripts/weather.sh --detailed"
+  }
+}

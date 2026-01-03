@@ -1,0 +1,9 @@
+{
+  // ───────── Visualizer ─────────
+  "custom/visualizer": {
+    "exec": "~/.config/waybar/scripts/cava_to_waybar.py",
+    "return-type": "text",
+    "interval": 0,
+    "tooltip": false
+  }
+}

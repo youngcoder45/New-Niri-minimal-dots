@@ -1,0 +1,12 @@
+{
+  // ───────── Memory ─────────
+  "memory": {
+    "interval": 5,
+    "format": "M {percentage}%",
+    "format-alt": "M {used:0.1f}G/{total:0.1f}G",
+    "max-length": 10,
+    "tooltip": true,
+    "tooltip-format": "RAM: {used:0.1f}G / {total:0.1f}G\nSwap: {swapUsed:0.1f}G / {swapTotal:0.1f}G",
+    "on-click": "alacritty -e btop"
+  }
+}

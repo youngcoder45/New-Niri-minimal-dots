@@ -1,0 +1,9 @@
+{
+  // ───────── Workspaces ─────────
+  "niri/workspaces": {
+    "format": "{index}",
+    "on-click": "activate",
+    "all-outputs": false,
+    "active-only": false
+  }
+}

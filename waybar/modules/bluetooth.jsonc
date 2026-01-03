@@ -1,0 +1,11 @@
+{
+  // ───────── Bluetooth ─────────
+  "custom/bluetooth": {
+    "exec": "~/.config/waybar/scripts/bluetooth.sh",
+    "return-type": "json",
+    "interval": 5,
+    "tooltip": true,
+    "on-click": "~/.config/waybar/scripts/bluetooth.sh --toggle",
+    "on-click-right": "blueman-manager"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  // ───────── Notifications ─────────
+  "custom/notifications": {
+    "exec": "~/.config/waybar/scripts/notifications.sh",
+    "return-type": "json",
+    "interval": 2,
+    "tooltip": true,
+    "on-click": "makoctl dismiss -a",
+    "on-click-right": "makoctl restore",
+    "on-click-middle": "makoctl invoke"
+  }
+}

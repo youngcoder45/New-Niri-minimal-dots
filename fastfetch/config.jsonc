@@ -1,0 +1,183 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "file",
+        "source": "/home/aditya/.config/fastfetch/arch.txt",
+        "padding": {
+            "top": 1
+        }
+    },
+  "display": {
+        "separator": " " // keep single-line separator to preserve your box look
+    },
+    "modules": [
+        { "type": "custom", "key": "╭───────────╮" },
+
+        {
+            "type": "title",
+            "key": "│ {#31} User    {#keys}│",
+            "format": "{user-name}"
+        },
+
+        {
+            "type": "host",
+            "key": "│ \u001b[1;34m󰌢 Host   {#keys}│",
+            "format": "{host-name}"
+        },
+
+        {
+            "type": "os",
+            "key": "│ {#34}{icon} Distro  {#keys}│"
+        },
+
+        {
+            "type": "kernel",
+            "key": "│ {#35} Kernel  {#keys}│"
+        },
+
+        {
+            "type": "uptime",
+            "key": "│ {#33}󰅐 Uptime  {#keys}│"
+        },
+
+        {
+            "type": "de",
+            "key": "│ {#36}󰇄 Desktop {#keys}│"
+        },
+
+        {
+            "type": "wm",
+            "key": "│ {#36} WM      {#keys}│"
+        },
+
+        {
+            "type": "terminal",
+            "key": "│ {#31} Terminal{#keys}│"
+        },
+
+        {
+            "type": "shell",
+            "key": "│ {#32} Shell   {#keys}│"
+        },
+
+        {
+            "type": "terminalfont",
+            "key": "│ {#32} Font    {#keys}│"
+        },
+
+        {
+            "type": "icons",
+            "key": "│ ├󰀻 Icons",
+            "keyColor": "blue"
+        },
+
+        {
+            "type": "cursor",
+            "key": "│ {#33} Cursor  {#keys}│"
+            // "keyColor": "blue"
+        },
+
+        {
+            "type": "cpu",
+            "key": "│ {#33}󰍛 CPU     {#keys}│",
+            "showPeCoreCount": true
+        },
+
+        {
+            "type": "gpu",
+            "key": "│ {#34}󰍹 GPU     {#keys}│"
+        },
+
+        {
+            "type": "memory",
+            "key": "│ {#36} Memory  {#keys}│"
+        },
+
+        {
+            "type": "swap",
+            "key": "│ {#32}󰓡 Swap    {#keys}│"
+        },
+
+        {
+            "type": "disk",
+            "key": "│ {#34}󰉉 Disk    {#keys}│",
+            "folders": "/"
+        },
+
+        {
+            "type": "packages",
+            "key": "│ {#33}󰚺 Pkgs    {#keys}│"
+        },
+
+        {
+            "type": "bluetooth",
+            "key": "│ {#31} BlueT   {#keys}│"
+        },
+
+        {
+            "type": "display",
+            "key": "│ {#35}󰍹 Display {#keys}│"
+        },
+
+        // {
+        //     "type": "sound",
+        //     "key": "│ {#35} Audio   {#keys}│",
+        //     "format": "{2}",
+        //     "keyColor": "magenta"
+        // },
+
+        {
+            "type": "player",
+            "key": "│ {#35}󰥠 Player  {#keys}│"
+            // "keyColor": "magenta"
+        },
+
+        {
+            "type": "media",
+            "key": "│ {#35}󰝚 Music   {#keys}│"
+            // "keyColor": "magenta"
+        },
+
+        { "type": "custom", "key": "├───────────┤" },
+
+        {
+            "type": "colors",
+            "key": "│ {#39} Colors  {#keys}│",
+            "symbol": "circle"
+        },
+
+        { "type": "custom", "key": "╰───────────╯" }
+
+        /* -----------------------------
+           Optional modules — uncomment one at a time
+           if you want them (safe; they won't run while commented).
+           Uncomment only if you're sure your fastfetch build supports them.
+           -----------------------------
+        ,
+
+        // GPU (uncomment if your fastfetch supports the 'gpu' module)
+        {
+            "type": "gpu",
+            "key": "│ {#34}󰍹 gpu     {#keys}│"
+        }
+
+        // Battery (only shows on laptops if supported)
+        ,
+        {
+            "type": "battery",
+            "key": "│ {#32} battery {#keys}│"
+        }
+
+        // Packages (uncomment if supported by your fastfetch version)
+        ,
+        */
+
+        // Screen resolution (uncomment if 'resolution' module exists)
+        /*,
+        {
+            "type": "resolution",
+            "key": "│ {#31} screen  {#keys}│"
+        }
+        */
+    ]
+}

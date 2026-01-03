@@ -1,0 +1,12 @@
+{
+  // ───────── Disk ─────────
+  "disk": {
+    "interval": 30,
+    "format": "󰋊 {percentage_used}%",
+    "format-alt": "󰋊 {used}/{total}",
+    "path": "/",
+    "tooltip": true,
+    "tooltip-format": "Used: {used} / {total}\nFree: {free} ({percentage_free}%)",
+    "on-click": "alacritty -e ncdu /"
+  }
+}

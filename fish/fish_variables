@@ -1,0 +1,7 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR __fish_initialized:4300
+SETUVAR fish_greeting:\x1d
+SETUVAR fish_greeting_shown:true
+SETUVAR fish_history_max_entries:10000
+SETUVAR fish_user_paths:/usr/local/bin

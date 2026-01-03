@@ -1,0 +1,16 @@
+{
+  // ───────── Network ─────────
+  "network": {
+    "format-wifi": "󰤨 {signalStrength}%",
+    "format-ethernet": "{bandwidthDownBytes}",
+    "format-disconnected": "󰤭 offline",
+    "format-linked": "󰈀 {ifname} (No IP)",
+    "tooltip-format": "{ifname}\n{ipaddr}/{cidr}\n{essid}\nSignal: {signalStrength}%\nFrequency: {frequency}MHz",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)\n󰈀 {ifname}\n󰩟 {ipaddr}/{cidr}\n󰞒 {bandwidthUpBytes}  {bandwidthDownBytes}\n󰖡 {frequency}MHz",
+    "tooltip-format-ethernet": "󰈀 {ifname}\n󰩟 {ipaddr}/{cidr}\n󰞒 {bandwidthUpBytes}  {bandwidthDownBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click": "alacritty -e nmtui",
+    "on-click-right": "nm-connection-editor",
+    "interval": 5
+  }
+}

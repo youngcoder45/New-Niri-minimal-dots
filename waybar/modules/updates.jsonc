@@ -1,0 +1,10 @@
+{
+  // ───────── Updates ─────────
+  "custom/updates": {
+    "exec": "~/.config/waybar/scripts/updates.sh",
+    "return-type": "json",
+    "interval": 3600,
+    "tooltip": true,
+    "on-click": "alacritty -e sh -c 'yay -Syu && echo Done! && read'"
+  }
+}

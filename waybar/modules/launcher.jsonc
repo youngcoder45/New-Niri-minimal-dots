@@ -1,0 +1,9 @@
+{
+  // ───────── Launcher ─────────
+  "custom/launcher": {
+    "format": "󰣇",
+    "tooltip": "Application Launcher",
+    "on-click": "fuzzel",
+    "on-click-right": "alacritty"
+  }
+}

@@ -1,0 +1,24 @@
+/* ═══════════════════════════════════════════════════════════════════
+ * Waybar Theme Configuration
+ * Color scheme definitions
+ * ═══════════════════════════════════════════════════════════════════ */
+
+/* Nord Color Palette */
+* {
+  --bg-primary: rgba(20, 20, 20, 0.9);
+  --bg-secondary: rgba(255, 255, 255, 0.04);
+  --bg-hover: rgba(136, 192, 208, 0.25);
+  --bg-active: rgba(163, 190, 140, 0.25);
+  --fg-primary: #e5e9f0;
+  --fg-secondary: #d8dee9;
+  --fg-dim: #4c566a;
+  --color-blue: #88c0d0;
+  --color-green: #a3be8c;
+  --color-yellow: #ebcb8b;
+  --color-red: #bf616a;
+  --color-purple: #b48ead;
+  --color-teal: #8fbcbb;
+  --color-orange: #d08770;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}

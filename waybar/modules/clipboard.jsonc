@@ -1,0 +1,9 @@
+{
+  // ───────── Clipboard ─────────
+  "custom/clipboard": {
+    "format": "C",
+    "tooltip": "Clipboard History",
+    "on-click": "~/.config/waybar/scripts/clipboard.sh --show",
+    "on-click-right": "~/.config/waybar/scripts/clipboard.sh --clear"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  // ───────── CPU ─────────
+  "cpu": {
+    "interval": 5,
+    "format": "C {usage}%",
+    "format-alt": "{avg_frequency}GHz",
+    "max-length": 10,
+    "on-click": "alacritty -e btop",
+    "tooltip": true
+  }
+}

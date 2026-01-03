@@ -1,0 +1,12 @@
+{
+  // ───────── Temperature ─────────
+  "temperature": {
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    "format": "{icon} {temperatureC}°C",
+    "format-critical": "{icon} {temperatureC}°C",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip": true,
+    "on-click": "alacritty -e watch sensors"
+  }
+}
