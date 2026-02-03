@@ -107,7 +107,7 @@ input {
   position x=1280 y=0
 }
 overview{
-  zoom 0.5
+  zoom 0.8
   backdrop-color "#1e1e2e"
 }
 
@@ -314,7 +314,7 @@ animations {
   // off
 
   // Slow down all animations by this factor. Values below 1 speed them up instead.
-  // slowdown 3.0
+  slowdown 1.4
 }
 
 // Window rules let you adjust behavior for individual windows.
@@ -342,6 +342,7 @@ window-rule{
 window-rule {
     match app-id="brave-browser"
     opacity 0.93
+    open-maximized true
 }
 window-rule {
     match app-id="vesktop"
@@ -349,6 +350,17 @@ window-rule {
     open-maximized true
 }
 
+window-rule {
+    match app-id="Equicord"
+    opacity 0.93
+    open-maximized true
+}
+
+window-rule {
+    match app-id="discord"
+    opacity 0.93
+    open-maximized true
+}
 window-rule {
     match app-id=r#"^Code$|^code$"#
     opacity 0.93

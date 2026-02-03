@@ -1,88 +1,59 @@
-/* ----------- 💫 https://github.com/JaKooLit 💫 -------- */
-/* wallust-wlogout */
-
-/* Importing wallust colors */
-@import '../../.config/waybar/wallust/colors-waybar.css';
+/* Super Cool Wlogout Theme */
 
 window {
-    font-size: 24pt;
-    color: @foreground; /* text */
-    background-color: rgba(30, 30, 46, 0.8);
+    background-color: rgba(12, 12, 12, 0.85); /* Deep dark semi-transparent */
 }
 
 button {
+    color: #e0e0e0;
+    background-color: #1a1b26;
+    border-style: solid;
+    border-width: 2px;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 20%;
-    background-color: rgba(200, 220, 255, 0);
-    animation: gradient_f 10s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55, 0.0, .28, 1.682), box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
-    border-radius: 80px;
-	border:0px;
-	outline-style: none;
+    background-size: 25%;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease-in-out;
+    margin: 10px;
 }
 
-button:focus {
-    background-size: 50%;
-	border: 0px;
-	outline-style: none;
-
-}
-
-button:hover {
-    background-color: transparent; 
-    color: @color13;
-    background-size: 50%;
-    margin: 30px;
-    border-radius: 80px;
+button:focus, button:active, button:hover {
+    background-color: #24283b;
     outline-style: none;
-	
+    box-shadow: 0 0 20px 2px rgba(137, 180, 250, 0.4); /* Glow effect */
+    transform: scale(1.05);
+    border-color: #7aa2f7;
 }
 
-/* Adjust the size of the icon or content inside the button */
-button span {
-    font-size: 1.2em; /* Increase the font size */
-}
-
+/* Specific button customizations */
 
 #lock {
-    background-image: image(url("./icons/lock.png"));
-}
-#lock:hover {
-    background-image: image(url("./icons/lock-hover.png"));
+    background-image: image(url("/home/aditya/.config/wlogout/icons/lock.png"));
+    border-color: #f7768e; /* Red */
 }
 
 #logout {
-    background-image: image(url("./icons/logout.png"));
-}
-#logout:hover {
-    background-image: image(url("./icons/logout-hover.png"));
+    background-image: image(url("/home/aditya/.config/wlogout/icons/logout.png"));
+    border-color: #fab387; /* Orange */
 }
 
 #suspend {
-    background-image: image(url("./icons/sleep.png"));
-}
-#suspend:hover {
-    background-image: image(url("./icons/sleep-hover.png"));
-}
-
-#shutdown {
-    background-image: image(url("./icons/power.png"));
-}
-#shutdown:hover {
-    background-image: image(url("./icons/power-hover.png"));
-}
-
-#reboot {
-    background-image: image(url("./icons/restart.png"));
-}
-#reboot:hover {
-    background-image: image(url("./icons/restart-hover.png"));
+    background-image: image(url("/home/aditya/.config/wlogout/icons/sleep.png"));
+    border-color: #e0af68; /* Yellow */
 }
 
 #hibernate {
-    background-image: image(url("./icons/hibernate.png"));
+    background-image: image(url("/home/aditya/.config/wlogout/icons/hibernate.png"));
+    border-color: #9ece6a; /* Green */
 }
-#hibernate:hover {
-    background-image: image(url("./icons/hibernate-hover.png"));
+
+#shutdown {
+    background-image: image(url("/home/aditya/.config/wlogout/icons/power.png"));
+    border-color: #7dcfff; /* Blue */
+}
+
+#reboot {
+    background-image: image(url("/home/aditya/.config/wlogout/icons/restart.png"));
+    border-color: #bb9af7; /* Lavender */
 }

@@ -1,0 +1,20 @@
+gui:
+  theme:
+    lightTheme: false 
+    activeBorderColor:
+      - "#76b0e8" # Green
+      - bold
+    inactiveBorderColor:
+      - "#dadada" # Text
+    optionsTextColor:
+      - "#e5c76b" # Blue
+    selectedLineBgColor:
+      - "#6cbfbf" # Surface0
+    selectedRangeBgColor:
+      - "#313244" # Surface0
+    cherryPickedCommitBgColor:
+      - "#c47fd5" # Teal
+    cherryPickedCommitFgColor:
+      - "#dadada" # Blue
+    unstagedChangesColor:
+      - "#e57474"       # Red

@@ -9,7 +9,7 @@
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n󰈀 {ifname}\n󰩟 {ipaddr}/{cidr}\n󰞒 {bandwidthUpBytes}  {bandwidthDownBytes}\n󰖡 {frequency}MHz",
     "tooltip-format-ethernet": "󰈀 {ifname}\n󰩟 {ipaddr}/{cidr}\n󰞒 {bandwidthUpBytes}  {bandwidthDownBytes}",
     "tooltip-format-disconnected": "Disconnected",
-    "on-click": "alacritty -e nmtui",
+    "on-click": "/home/aditya/.config/waybar/scripts/network-control.sh",
     "on-click-right": "nm-connection-editor",
     "interval": 5
   }

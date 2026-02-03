@@ -29,7 +29,7 @@ window#waybar {
 #pulseaudio,
 #pulseaudio.microphone,
 #network,
-#custom-bluetooth,
+#bluetooth,
 #custom-clipboard,
 #custom-notifications,
 #custom-power,
@@ -60,7 +60,7 @@ window#waybar {
 #custom-weather,
 #pulseaudio,
 #network,
-#custom-bluetooth,
+#bluetooth,
 #custom-clipboard,
 #custom-notifications,
 #custom-power,
@@ -84,7 +84,7 @@ window#waybar {
 #custom-power:hover,
 #custom-clipboard:hover,
 #custom-notifications:hover,
-#custom-bluetooth:hover,
+#bluetooth:hover,
 #custom-weather:hover,
 #custom-updates:hover,
 #idle_inhibitor:hover {
@@ -285,16 +285,16 @@ pulseaudio#microphone {
 }
 
 /* ───────── Bluetooth ───────── */
-#custom-bluetooth {
+#bluetooth {
   color: #88c0d0;
 }
 
-#custom-bluetooth.connected {
+#bluetooth.connected {
   color: #bb9af7;
-  background: rgba(163, 190, 140, 0.1);
+  /* background: rgba(163, 190, 140, 0.1); */
 }
 
-#custom-bluetooth.off {
+#bluetooth.off {
   color: #4c566a;
 }
 
@@ -319,7 +319,8 @@ pulseaudio#microphone {
 }
 #custom-clipboard:hover,
 #custom-notifications:hover,
-#custom-power:hover {
+#custom-power:hover,
+#bluetooth:hover {
   /* animation: pulse 2s infinite; */
   background: rgba(18, 18, 19, 0.57);
   border: 0.5px solid rgba(187, 154, 247, 0.35);

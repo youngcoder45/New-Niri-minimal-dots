@@ -56,7 +56,7 @@
     "memory",
     "pulseaudio",
     "network",
-    // "custom/bluetooth",
+    "bluetooth",
     "custom/clipboard",
     "custom/notifications",
     // "tray",

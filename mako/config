@@ -1,0 +1,59 @@
+# default theme for Mako notification daemon
+
+# Layout
+max-visible=5
+layer=overlay
+anchor=top-right
+margin=8
+width=260
+height=90
+
+# Styling (default)
+background-color=#0d0e11
+text-color=#e7e3ff
+border-color=#89b4fa
+border-size=1
+border-radius=0
+padding=10
+
+# Font
+font=Iosevka 10
+
+# Icons
+max-icon-size=48
+icon-path=/usr/share/icons/Adwaita
+
+# Timing
+default-timeout=8000
+ignore-timeout=1
+
+# History (keep notifications for waybar script)
+max-history=50
+
+# Grouping
+group-by=app-name
+
+# Urgency levels
+[urgency=low]
+background-color=#0d0e11
+text-color=#9399b2
+border-color=#6c7086
+default-timeout=4000
+
+[urgency=normal]
+background-color=#0d0e11
+text-color=#e7e3ff
+border-color=#89b4fa
+default-timeout=8000
+
+[urgency=critical]
+background-color=#0d0e11
+text-color=#e7e3ff
+border-color=#f38ba8
+default-timeout=0
+
+[mode=do-not-disturb]
+invisible=1
+
+[mode=do-not-disturb app-name=notify-send]
+invisible=0

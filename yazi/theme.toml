@@ -1,0 +1,10 @@
+[app]
+overall = { bg = "#1e1e2e" }
+
+[mgr]
+cwd = { fg = "#89b4fa", bold = true }
+find_keyword = { fg = "#f9e2af", bold = true }
+find_position = { fg = "#a6adc8" }
+marker_selected = { fg = "#f38ba8", bold = true }
+count_selected = { fg = "#f9e2af", bold = true }
+border_style = { fg = "#6c7086" }

@@ -1,0 +1,21 @@
+[manager]
+show_hidden = true
+
+[manager.prepend_keymap]
+"g" = "cd ~"
+"~" = "cd ~"
+
+[preview]
+tab_size = 2
+
+[plugin]
+
+[plugin.preload]
+
+[input]
+font_family = "Lilex"
+font_size = 16
+
+[select]
+font_family = "Lilex"
+font_size = 16

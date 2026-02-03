@@ -1,11 +1,15 @@
 {
   // ───────── Bluetooth ─────────
-  "custom/bluetooth": {
-    "exec": "~/.config/waybar/scripts/bluetooth.sh",
-    "return-type": "json",
-    "interval": 5,
-    "tooltip": true,
-    "on-click": "~/.config/waybar/scripts/bluetooth.sh --toggle",
-    "on-click-right": "blueman-manager"
+  "bluetooth": {
+    "format": "󰂯 {status}",
+    "format-disabled": "󰂲",
+    "format-off": "󰂲",
+    "format-on": "󰂯",
+    "format-connected": "󰂯 {num_connections}",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "󰂯 {device_alias}\t{device_battery_percentage}%",
+    "on-click": "~/.config/waybar/scripts/bluetooth-control.sh",
+    "on-click-right": "rfkill toggle bluetooth"
   }
 }
