@@ -13,20 +13,30 @@ This setup focuses on a clean **"Noctalia"** dark theme, modular configuration, 
 
 If you are just browsing, here is what this setup looks like.
 
-| **Desktop Overview** | **App Launcher** |
+| **Desktop & Waybar** | **Window Overview** |
 |:---:|:---:|
-| ![Desktop](Screenshots/image.png) | ![Launcher](Screenshots/image3.png) |
-| *Clean desktop with Waybar* | *Fuzzel app menu* |
+| ![Desktop](Screenshots/desktopnwaybar.png) | ![Overview](Screenshots/overview.png) |
+| *Clean desk with modular Waybar* | *Niri's scrollable window overview* |
 
-| **Terminal Workflow** | **System Monitor** |
+| **Terminal (Alacritty)** | **File Manager (Ranger)** |
 |:---:|:---:|
-| ![Terminal](Screenshots/image2.png) | ![Btop](Screenshots/image4.png) |
-| *Alacritty + Fish + Starship* | *Btop monitoring resources* |
+| ![Terminal](Screenshots/alacritty.png) | ![Ranger](Screenshots/ranger.png) |
+| *Alacritty + Fish + Starship* | *Ranger console file manager* |
 
-| **Editor (Neovim)** | **Lock Screen** |
+| **Neovim (NvChad)** | **Obsidian Notes** |
 |:---:|:---:|
-| ![Neovim](Screenshots/image5.png) | ![Lock](Screenshots/image6.png) |
-| *NvChad custom config* | *Swaylock minimal lock* |
+| ![Neovim](Screenshots/neovim.png) | ![Obsidian](Screenshots/obsidian.png) |
+| *Custom NvChad IDE setup* | *Knowledge base & notes* |
+
+| **Game Dev (Godot)** | **Communication (Discord)** |
+|:---:|:---:|
+| ![Godot](Screenshots/godot.png) | ![Discord](Screenshots/discord.png) |
+| *Godot Engine themed* | *Discord client* |
+
+| **Audio Visualizer** | |
+|:---:|:---:|
+| ![Cava](Screenshots/cava.png) | |
+| *Cava visualizer* | |
 
 ---
 
@@ -115,6 +125,38 @@ cp -r niri waybar alacritty fish btop fuzzel mako swaylock wlogout ~/.config/
 - **NvChad Integrated:** Drop-in replacement for standard Nvim config.
 - **Unified Theming:** **Noctalia** theme consistency across terminal, window manager, and UI apps.
 - **Hardware Acceleration:** Configured for optimal performance on supported GPUs.
+
+---
+
+## 🔮 Future Plans
+
+- [ ]  Add Dark / Light mode toggle script
+- [ ]  Improve `swaylock` visual effects
+- [ ]  Create an automated installation script (`install.sh`)
+- [ ]  Add more color schemes (Nord, Catppuccin, Gruvbox)
+- [ ]  Integrate `rofi` as an alternative launcher
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! If you have any improvements, bug fixes, or new feature ideas, please feel free to contribute.
+
+1.  **Fork** the repository.
+2.  **Clone** your fork locally.
+3.  **Create a new branch** for your feature or fix.
+4.  **Commit** your changes with clear messages.
+5.  **Push** to your fork and submit a **Pull Request**.
+
+Please ensure your code follows the existing style and conventions.
+
+---
+
+## ⭐ Star History
+
+If you find this repository useful, please consider giving it a star!
+
+[![Star History Chart](https://api.star-history.com/svg?repos=youngcoder45/New-Niri-minimal-dots&type=Date)](https://star-history.com/#youngcoder45/New-Niri-minimal-dots&Date)
 
 ---
 
