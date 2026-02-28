@@ -17,27 +17,36 @@ If you are just browsing, here is what this setup looks like.
 |:---:|:---:|
 | ![Desktop](Screenshots/desktopnwaybar.png) | ![Overview](Screenshots/overview.png) |
 | *Clean desk with modular Waybar* | *Niri's scrollable window overview* |
+| **Wallpaper picker** | **Lazy Vim** |
+|:---:|:---:|
+| ![Fuzzel](Screenshots/wallpaperpicker.png) | ![LazyVim](Screenshots/lazyvim.png) |
+| *Fuzzel wallpaper picker* | *Lazygit terminal UI* |
+
+| **OBS Studio** | **Btop System Monitor** |
+|:---:|:---:|
+| ![OBS](Screenshots/OBS.png) | ![Btop](Screenshots/btopbtm.png) |
+| *OBS Studio with Normal theme* | *Btop with Glassy Frost theme* |
+
 
 | **Terminal (Alacritty)** | **File Manager (Ranger)** |
 |:---:|:---:|
 | ![Terminal](Screenshots/alacritty.png) | ![Ranger](Screenshots/ranger.png) |
 | *Alacritty + Fish + Starship* | *Ranger console file manager* |
 
-| **Neovim (NvChad)** | **Obsidian Notes** |
+| **Audio Visualizer** | **Obsidian Notes** |
 |:---:|:---:|
-| ![Neovim](Screenshots/neovim.png) | ![Obsidian](Screenshots/obsidian.png) |
-| *Custom NvChad IDE setup* | *Knowledge base & notes* |
+| ![Cava](Screenshots/cava.png) | ![Obsidian](Screenshots/obsidian.png) |
+| *Custom Cava visualizer* | *Knowledge base & notes* |
 
 | **Game Dev (Godot)** | **Communication (Discord)** |
 |:---:|:---:|
 | ![Godot](Screenshots/godot.png) | ![Discord](Screenshots/discord.png) |
 | *Godot Engine themed* | *Discord client* |
 
-| **Audio Visualizer** | |
-|:---:|:---:|
-| ![Cava](Screenshots/cava.png) | |
-| *Cava visualizer* | |
-
+| **Main Landing Page** |
+|:---:|
+| ![Main](Screenshots/landing.png) |
+| *Main landing page with custom wallpaper* |
 ---
 
 ## 🧩 Components
