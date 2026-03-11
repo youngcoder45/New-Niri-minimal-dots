@@ -6,7 +6,6 @@
 > A highly configured, minimal, and aesthetic collection of dotfiles for the [Niri](https://github.com/YaLTeR/niri) scrollable tiling window manager. 
 
 This setup focuses on a clean **"Noctalia"** dark theme, modular configuration, and a keyboard-centric workflow. Everything is designed to work together seamlessly with a consistent color palette and typography.
-
 ---
 
 ## 📸 Gallery
