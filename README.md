@@ -2,7 +2,7 @@
   <img src="Screenshots/landing.png" alt="Niri Minimal Dots" width="800">
 </p>
 
-<h1 align="center">Niri Minimal Dots</h1>
+<h1 align="center">Niri Minimal Dots!</h1>
 
 <p align="center">
   A clean, minimal <a href="https://github.com/YaLTeR/niri">Niri</a> Wayland compositor configuration for Arch Linux with Catppuccin Mocha theme.
