@@ -1,7 +1,6 @@
 [general]
-import = ["themes/noctalia.toml"]
 
-# Colors (Noctalia Default)
+# Colors
 
 [colors.bright]
 black = '#21215F'
