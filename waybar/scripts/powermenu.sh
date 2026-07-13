@@ -1,6 +1,7 @@
 #!/bin/bash
+# Power menu using fuzzel
 
-# Power menu script using fuzzel
+set -euo pipefail
 
 OPTIONS="⏻ Shutdown\n⏾ Reboot\n󰒲 Suspend\n󰍃 Logout\n󰷛 Lock"
 
