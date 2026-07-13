@@ -1,36 +1,30 @@
 #!/bin/bash
+# Bluetooth status for waybar
 
-# Bluetooth status script for waybar
+set -euo pipefail
 
-get_status() {
-    if bluetoothctl show 2>/dev/null | grep -q "Powered: yes"; then
-        # Get connected devices
-        devices=$(bluetoothctl devices Connected 2>/dev/null | wc -l)
-        
-        if [ "$devices" -gt 0 ]; then
-            device_name=$(bluetoothctl devices Connected 2>/dev/null | head -n1 | cut -d' ' -f3-)
-            echo "{\"text\":\"󰂯\",\"class\":\"connected\",\"tooltip\":\"Connected: $device_name\"}"
-        else
-            echo "{\"text\":\"󰂯\",\"class\":\"on\",\"tooltip\":\"Bluetooth On\"}"
-        fi
-    else
-        echo "{\"text\":\"󰂲\",\"class\":\"off\",\"tooltip\":\"Bluetooth Off\"}"
+if ! command -v bluetoothctl &>/dev/null; then
+    echo '{"text":"󰂲","class":"disabled","tooltip":"bluetoothctl not found"}'
+    exit 0
+fi
+
+POWER_STATE=$(bluetoothctl show | grep "Powered: yes" || true)
+
+if [ -z "$POWER_STATE" ]; then
+    echo '{"text":"󰂲","class":"disabled","tooltip":"Bluetooth OFF"}'
+    exit 0
+fi
+
+CONNECTED=$(bluetoothctl devices | while read -r line; do
+    MAC=$(echo "$line" | awk '{print $2}')
+    if bluetoothctl info "$MAC" 2>/dev/null | grep -q "Connected: yes"; then
+        echo "$line"
     fi
-}
+done | head -n1)
 
-toggle() {
-    if bluetoothctl show 2>/dev/null | grep -q "Powered: yes"; then
-        bluetoothctl power off
-    else
-        bluetoothctl power on
-    fi
-}
-
-case "$1" in
-    --toggle)
-        toggle
-        ;;
-    *)
-        get_status
-        ;;
-esac
+if [ -z "$CONNECTED" ]; then
+    echo '{"text":"󰂯","class":"on","tooltip":"Bluetooth ON (No devices)"}'
+else
+    DEV_NAME=$(echo "$CONNECTED" | cut -d ' ' -f 3-)
+    echo "{\"text\":\"󰂰\",\"class\":\"connected\",\"tooltip\":\"Connected: $DEV_NAME\"}"
+fi
