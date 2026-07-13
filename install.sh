@@ -106,6 +106,11 @@ fi
 log "Enabling user services..."
 systemctl --user enable --now mako 2>/dev/null || true
 
+# ── Fix Hardcoded Paths ───────────────────────────────────────
+log "Fixing hardcoded paths..."
+find "$CONFIG_DIR" -type f \( -name "*.css" -o -name "*.kdl" -o -name "*.toml" \) \
+    -exec sed -i "s|__HOME__|$HOME|g" {} \; 2>/dev/null || true
+
 # ── Make Scripts Executable ────────────────────────────────────
 log "Setting script permissions..."
 find "$CONFIG_DIR" -name "*.sh" -exec chmod +x {} \; 2>/dev/null || true
