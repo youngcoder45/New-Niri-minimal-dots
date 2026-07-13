@@ -1,0 +1,33 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Backup files
+*~
+*.bak
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Compiled binaries
+*.o
+*.so
+*.dylib
+
+# IDE files
+.vscode/
+.idea/
+
+# Build artifacts
+dist/
+build/
+target/
+
+# Misc
+.cache/
+*.log
