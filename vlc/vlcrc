@@ -1,0 +1,5 @@
+# VLC Media Player Configuration
+# Place this file at: ~/.config/vlc/vlcrc
+
+[qt4]
+privacy-network-accesspolicy=0
