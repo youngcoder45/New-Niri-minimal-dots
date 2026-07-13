@@ -1,0 +1,92 @@
+# ╔═══════════════════════════════════════════════════════════════╗
+# ║  Niri Minimal Dots - Package List                            ║
+# ║  Install with: pacman -S --needed - < packages.txt           ║
+# ╚═══════════════════════════════════════════════════════════════╝
+
+# ── Window Manager & Core ──────────────────────────────────────
+niri
+waybar
+fuzzel
+mako
+wlogout
+swaylock
+swaybg
+nm-applet
+polkit-gnome
+gnome-keyring
+
+# ── Terminal & Shell ───────────────────────────────────────────
+alacritty
+fish
+starship
+fastfetch
+
+# ── Clipboard ──────────────────────────────────────────────────
+wl-clipboard
+cliphist
+
+# ── Audio ──────────────────────────────────────────────────────
+pipewire
+pipewire-pulse
+pipewire-alsa
+wireplumber
+playerctl
+pamixer
+pavucontrol
+cava
+
+# ── Video ──────────────────────────────────────────────────────
+mpv
+
+# ── Brightness & Power ────────────────────────────────────────
+brightnessctl
+
+# ── Bluetooth ──────────────────────────────────────────────────
+bluez
+bluez-utils
+
+# ── Network ────────────────────────────────────────────────────
+networkmanager
+network-manager-applet
+
+# ── Screenshots ────────────────────────────────────────────────
+grim
+slurp
+swappy
+imagemagick
+
+# ── File Manager ───────────────────────────────────────────────
+nnn
+nnn-plugins
+
+# ── Development ────────────────────────────────────────────────
+neovim
+git
+lazygit
+
+# ── System Monitor ─────────────────────────────────────────────
+bottom
+btop
+
+# ── Terminal Utilities ─────────────────────────────────────────
+eza
+bat
+fd
+ripgrep
+fzf
+zoxide
+jq
+unzip
+p7zip
+unrar
+less
+tree
+
+# ── Fonts ──────────────────────────────────────────────────────
+ttf-firacode-nerd
+noto-fonts
+noto-fonts-emoji
+noto-fonts-cjk
+
+# ── Misc ───────────────────────────────────────────────────────
+polkit
