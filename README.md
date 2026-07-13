@@ -18,13 +18,21 @@
 
 ## Preview
 
-| Desktop | Terminal | Waybar |
-|---------|----------|--------|
-| ![Desktop](Screenshots/desktopnwaybar.png) | ![Terminal](Screenshots/alacritty.png) | ![Waybar](Screenshots/overview.png) |
+| Desktop | Tiled | Waybar |
+|---------|-------|--------|
+| ![Desktop](Screenshots/desktop.png) | ![Tiled](Screenshots/desktop-tiled.png) | ![Waybar](Screenshots/waybar.png) |
 
-| Launcher | Wallpaper Picker | Power Menu |
-|----------|-----------------|------------|
-| ![Launcher](Screenshots/lazyvim.png) | ![Wallpapers](Screenshots/wallpaperpicker.png) | ![Power](Screenshots/cava.png) |
+| Launcher | Workspaces | Zed |
+|----------|------------|-----|
+| ![Launcher](Screenshots/launcher.png) | ![Workspaces](Screenshots/workspaces.png) | ![Zed](Screenshots/zed.png) |
+
+| Neovim | Power Menu | Wallpaper Picker |
+|--------|------------|------------------|
+| ![Neovim](Screenshots/neovim.png) | ![Power Menu](Screenshots/powermenu.png) | ![Wallpapers](Screenshots/wallpaperpicker.png) |
+
+| btop | Cava |
+|------|------|
+| ![btop](Screenshots/btopbtm.png) | ![Cava](Screenshots/cava.png) |
 
 ---
 
