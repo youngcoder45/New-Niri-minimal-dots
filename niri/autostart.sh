@@ -1,22 +1,24 @@
 #!/bin/sh
 
-# Set cursor theme for niri / Wayland (and Xwayland apps)
- # Must match an installed theme folder under ~/.icons or /usr/share/icons
-export XCURSOR_THEME="Bibata-Modern-Classic"
-export XCURSOR_SIZE=24
-export XCURSOR_PATH="$HOME/.config/niri:$HOME/.icons:$HOME/.local/share/icons:/usr/share/icons"
+# Niri autostart applications
 
-# Wallpaper
-swaybg -i "$HOME/Pictures/wallpapers/rogue.jpg" -m fill &
+# Random wallpaper from ~/Pictures/wallpapers/
+WALLPAPER_DIR="$HOME/Pictures/wallpapers"
+if [ -d "$WALLPAPER_DIR" ]; then
+    WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -name '*.jpg' -o -name '*.png' -o -name '*.webp' \) 2>/dev/null | shuf -n1)
+    if [ -n "$WALLPAPER" ]; then
+        swaybg -i "$WALLPAPER" -m fill &
+    fi
+fi
 
-# Notifications
+# Notification daemon
 mako &
 
 # Clipboard history
 wl-paste --watch cliphist store &
 
-# Bar
+# Status bar
 waybar &
 
-# Polkit (needed for mounts, permissions)
- /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# Polkit agent (needed for mounts, permissions)
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &

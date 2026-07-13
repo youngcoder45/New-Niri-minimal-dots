@@ -37,7 +37,7 @@ higher_cutoff_freq = 10000
 
 
 [input]
-method = pulse
+method = pipewire
 source = auto
 
 ; method = pipewire
