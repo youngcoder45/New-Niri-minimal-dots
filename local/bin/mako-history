@@ -1,0 +1,18 @@
+#!/bin/bash
+# Simple mako notification history viewer
+# Shows recent notifications in a popup
+
+LOG_FILE="${XDG_CACHE_HOME:-$HOME/.cache}/mako_history.log"
+
+# Create log file if it doesn't exist
+mkdir -p "$(dirname "$LOG_FILE")"
+touch "$LOG_FILE"
+
+# Show last 10 notifications in fuzzel
+if command -v fuzzel >/dev/null 2>&1; then
+    tail -20 "$LOG_FILE" | fuzzel --dmenu -p "Notifications:" || true
+else
+    # Fallback to notify-send
+    COUNT=$(wc -l < "$LOG_FILE")
+    notify-send "Notification History" "Total notifications: $COUNT\n\nRecent:\n$(tail -5 "$LOG_FILE")"
+fi
