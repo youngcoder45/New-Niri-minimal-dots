@@ -1,0 +1,18 @@
+#!/bin/bash
+# Clipboard history manager for cliphist
+# Opens near cursor and actually copies selected item
+
+if ! command -v cliphist >/dev/null 2>&1; then
+    notify-send "Error" "cliphist not installed"
+    exit 1
+fi
+
+# Get clipboard history and let user select
+SELECTED=$(cliphist list | fuzzel --dmenu -l 10 -w 300)
+
+if [ -n "$SELECTED" ]; then
+    # Decode and copy to clipboard
+    echo "$SELECTED" | cliphist decode | wl-copy
+    # Show confirmation
+    notify-send "Clipboard" "Item copied to clipboard"
+fi

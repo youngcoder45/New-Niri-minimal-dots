@@ -1,0 +1,18 @@
+#!/bin/bash
+# Notification history viewer
+# Shows recent notifications in a popup
+
+LOG_FILE="${XDG_CACHE_HOME:-$HOME/.cache}/mako_notifications.log"
+mkdir -p "$(dirname "$LOG_FILE")"
+touch "$LOG_FILE"
+
+# Show notifications in fuzzel with preview of content
+if command -v fuzzel >/dev/null 2>&1; then
+    if [ -s "$LOG_FILE" ]; then
+        tail -20 "$LOG_FILE" | fuzzel --dmenu -l 10 -w 400 -p "Recent Notifications:" || true
+    else
+        notify-send "Notifications" "No notification history"
+    fi
+else
+    notify-send "Notification History" "$(tail -5 "$LOG_FILE")"
+fi

@@ -1,0 +1,2 @@
+timeout = 300000
+command = "~/.config/niri-lock/lock.sh"

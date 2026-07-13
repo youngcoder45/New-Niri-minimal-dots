@@ -1,0 +1,62 @@
+#!/bin/sh
+# fuzzel-wallpaper - A fuzzel-based wallpaper picker
+# Supports: swaybg, hyprpaper, feh, nitrogen, xwallpaper, swww
+
+WALLDIR="${FUZZEL_WALLPAPER_DIR:-$HOME/Pictures/wallpapers}"
+
+# Detect wallpaper setter
+detect_setter() {
+    if [ -n "$WAYLAND_DISPLAY" ]; then
+        for cmd in swww swaybg hyprpaper xwallpaper; do
+            command -v "$cmd" >/dev/null 2>&1 && echo "$cmd" && return
+        done
+    fi
+    # X11 fallback
+    for cmd in feh nitrogen xwallpaper; do
+        command -v "$cmd" >/dev/null 2>&1 && echo "$cmd" && return
+    done
+    echo "none"
+}
+
+set_wallpaper() {
+    WALL="$1"
+    SETTER="$2"
+
+    case "$SETTER" in
+        swaybg)
+            pkill swaybg 2>/dev/null
+            swaybg -i "$WALL" -m fill &
+            ;;
+        swww)
+            swww img "$WALL" --transition-type fade ;;
+        hyprpaper)
+            hyprctl hyprpaper wallpaper ",$WALL" ;;
+        feh)
+            feh --bg-fill "$WALL" ;;
+        nitrogen)
+            nitrogen --set-zoom-fill "$WALL" ;;
+        xwallpaper)
+            xwallpaper --zoom "$WALL" ;;
+        *)
+            notify-send "fuzzel-wallpaper" "No supported wallpaper setter found!" 2>/dev/null
+            exit 1
+            ;;
+    esac
+}
+
+# Checks
+if [ ! -d "$WALLDIR" ]; then
+    notify-send "fuzzel-wallpaper" "Wallpaper directory not found: $WALLDIR" 2>/dev/null
+    echo "Error: Wallpaper directory not found: $WALLDIR" >&2
+    exit 1
+fi
+
+command -v fuzzel >/dev/null 2>&1 || { echo "fuzzel not found"; exit 1; }
+
+SETTER=$(detect_setter)
+
+while true; do
+    WALL=$(ls "$WALLDIR" | fuzzel --dmenu --prompt "Wallpaper (ESC to exit) > ")
+    [ -z "$WALL" ] && exit 0
+    set_wallpaper "$WALLDIR/$WALL" "$SETTER"
+done
