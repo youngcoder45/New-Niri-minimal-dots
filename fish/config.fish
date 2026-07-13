@@ -1,107 +1,48 @@
 if status is-interactive
-    # ── Environment Variables ──────────────────────────────────
-    set -gx LC_ALL en_US.UTF-8
-    set -gx LANG en_US.UTF-8
-    set -gx PATH $PATH /opt/nvim/ $HOME/bin $HOME/.local/bin
-
-    set -gx XCURSOR_THEME Bibata-Modern-Classic
-    set -gx XCURSOR_SIZE 24
-
     set -U fish_greeting
 
-    # ── Starship Prompt ────────────────────────────────────────
-    set -gx STARSHIP_CONFIG $HOME/.config/prompt/starship.toml
-    starship init fish | source
+    # Locale
+    set -gx LANG en_US.UTF-8
+    set -gx LC_ALL en_US.UTF-8
 
-    # ── Catppuccin Mocha Colors ────────────────────────────────
-    set fish_color_normal           cdd6f4
-    set fish_color_command          74c7ec --bold
-    set fish_color_keyword          cba6f7 --bold
-    set fish_color_quote            a6e3a1
-    set fish_color_redirection      fab387 --bold
-    set fish_color_end              89b4fa --bold
-    set fish_color_error            f38ba8 --bold
-    set fish_color_param            f9e2af
-    set fish_color_option           94e2d5
-    set fish_color_comment          6c7086 --bold
-    set fish_color_valid_path       --underline
-    set fish_color_autosuggestion   6c7086
-    set fish_color_user             f5c2e7
-    set fish_color_host             89dceb
-    set fish_color_cancel           f38ba8 --reverse
-    set fish_color_search_match     --background=45475a
-    set fish_color_selection        --background=585b70
-    set fish_color_history_current  --bold
-    set fish_color_operator         fab387 --bold
-    set fish_color_escape           89dceb --bold
-    set fish_color_cwd              89b4fa
-    set fish_color_cwd_root         f38ba8
-    set fish_color_match            --background=45475a
+    # Defaults
+    set -gx TERMINAL alacritty
+    set -gx EDITOR nvim
+    set -gx VISUAL $EDITOR
+    set -gx PAGER less
 
-    set fish_pager_color_prefix             74c7ec --bold
-    set fish_pager_color_completion         cdd6f4
-    set fish_pager_color_description        6c7086
-    set fish_pager_color_progress           1e1e2e --background=74c7ec
-    set fish_pager_color_secondary_prefix   45475a
-    set fish_pager_color_selected_prefix    1e1e2e --background=cba6f7
-    set fish_pager_color_selected_completion cdd6f4 --background=45475a
-    set fish_pager_color_selected_description f9e2af --background=45475a
+    # Paths
+    fish_add_path -g $HOME/.local/bin $HOME/bin
 
-    # ── History ────────────────────────────────────────────────
-    set -g fish_history_size 10000
-    set -U fish_history_max_entries 10000
+    # Starship
+    set -gx STARSHIP_CONFIG $HOME/.config/starship/starship.toml
+    type -q starship; and starship init fish | source
 
-    # ── Key Bindings ───────────────────────────────────────────
-    function fish_user_key_bindings
-        bind \cu backward-kill-line
-        bind \e\[1\;5C forward-word
-        bind \e\[1\;5D backward-word
-        bind \e\[H beginning-of-line
-        bind \e\[F end-of-line
-        bind \e\[5~ history-search-backward
-        bind \e\[6~ history-search-forward
-        bind \e\[3~ delete-char
-        bind \cf accept-autosuggestion
-        bind \e\r 'commandline -i \n'
-    end
+    # zoxide
+    type -q zoxide; and zoxide init fish | source
 
-    # ── Aliases ────────────────────────────────────────────────
-    alias imlazy='sudo pacman -Syu && yay -Syu'
+    # Abbreviations
+    abbr -a -- c clear
+    abbr -a -- .. 'cd ..'
+    abbr -a -- ... 'cd ../..'
+    abbr -a -- g git
+    abbr -a -- ga 'git add'
+    abbr -a -- gc 'git commit'
+    abbr -a -- gp 'git push'
+    abbr -a -- gs 'git status'
+    abbr -a -- gl 'git log --oneline --decorate --graph'
 
-    # Navigation
-    alias ..='cd ..'
-    alias ...='cd ../..'
-    alias ....='cd ../../..'
-    alias .....='cd ../../../..'
-    alias dl='cd ~/Downloads'
-    alias doc='cd ~/Documents'
-    alias dt='cd ~/Desktop'
-
-    # Git
-    alias g='git'
-
-    # Grep with color
-    alias grep='grep --color=auto'
-    alias diff='diff --color=auto'
-    alias ip='ip --color=auto'
-
-    # ── Functions ──────────────────────────────────────────────
-    function reload
-        source ~/.config/fish/config.fish
-        echo "Fish configuration reloaded!"
-    end
-
-    function mkcd
-        mkdir -p $argv[1] && cd $argv[1]
-    end
-
-    function cd
-        builtin cd $argv
-        and ls
+    # Utilities
+    function mkcd --description "mkdir and cd"
+        test (count $argv) -ge 1; or begin
+            echo "Usage: mkcd <dir>"
+            return 1
+        end
+        mkdir -p -- $argv[1]; and cd -- $argv[1]
     end
 
     function extract --description "Extract archives"
-        if test (count $argv) -eq 0
+        test (count $argv) -ge 1; or begin
             echo "Usage: extract <archive> [archive2 ...]"
             return 1
         end
@@ -113,80 +54,51 @@ if status is-interactive
                     tar xjf $f
                 case '*.tar.xz' '*.txz'
                     tar xJf $f
+                case '*.tar'
+                    tar xf $f
                 case '*.zip'
                     unzip $f
+                case '*.7z'
+                    7z x $f
                 case '*.rar'
-                    if type -q unrar
-                        unrar x $f
-                    else
-                        echo "[!] unrar not installed"
-                    end
+                    type -q unrar; and unrar x $f; or echo "unrar not installed"
+                case '*.gz'
+                    gunzip $f
                 case '*'
-                    echo "[x] Don't know how to extract: $f"
+                    echo "Don't know how to extract: $f"
             end
         end
     end
 
-    function serve --description "Start HTTP server on port (default 8000)"
-        set port 8000
-        if test (count $argv) -ge 1
-            set port $argv[1]
+    function serve --description "Serve current dir over HTTP"
+        set -l port 8000
+        test (count $argv) -ge 1; and set port $argv[1]
+        python -m http.server $port
+    end
+
+    function memtop --description "Top memory consumers"
+        ps aux --sort=-%mem | head -11
+    end
+
+    function diskuse --description "Largest dirs (default: ~)"
+        set -l target ~
+        test (count $argv) -ge 1; and set target $argv[1]
+        du -sh $target/* 2>/dev/null | sort -hr | head -10
+    end
+
+    # Startup display (once per session)
+    if not set -q __fetch_ran
+        set -g __fetch_ran 1
+
+        if not set -q TMUX
+            if set -q ALACRITTY_WINDOW_ID; or string match -qi '*alacritty*' $TERM
+                type -q fastfetch; and fastfetch
+            else if string match -qi 'foot*' $TERM
+                type -q neofetch; and neofetch
+            end
         end
-        echo "[*] Serving on http://localhost:$port"
-        python3 -m http.server $port
     end
-
-    function gitlog --description "Pretty git log"
-        git log --oneline --graph --decorate --all
-    end
-
-    function sysinfo --description "Show system info"
-        echo "─────────────────────────────────────────────"
-        uname -a
-        echo "─────────────────────────────────────────────"
-    end
-
-    function killp --description "Kill process by name"
-        if test (count $argv) -eq 0
-            echo "Usage: killp <process_name>"
-            return 1
-        end
-        pkill -f $argv[1]
-        echo "[+] Killed processes matching: $argv[1]"
-    end
-
-    # ── Abbreviations ──────────────────────────────────────────
-    abbr -a c clear
-    abbr -a cls clear
-    abbr -a .. cd ..
-    abbr -a ... cd ../..
-    abbr -a .... cd ../../..
-    abbr -a update 'yay -Syu'
-    abbr -a vim nvim
-    abbr -a vi nvim
-    abbr -a g git
-    abbr -a ga 'git add'
-    abbr -a gc 'git commit'
-    abbr -a gp 'git push'
-    abbr -a gs 'git status'
-    abbr -a gl 'git log --oneline'
-
-    # ── External Tools ─────────────────────────────────────────
-    if not set -q EDITOR
-        set -x EDITOR nvim
-    end
-    set -x VISUAL $EDITOR
-    set -x PAGER less
-    set -x LESS '-R --use-color -Dd+r -Du+b'
-
-    if command -v zoxide >/dev/null
-        zoxide init fish | source
-    end
-
-    if command -v thefuck >/dev/null
-        thefuck --alias | source
-    end
-
-    # Show fastfetch at startup
-    fastfetch
 end
+fish_add_path /home/aditya/.spicetify
+set -gx TERM xterm-256color
+set -e GTK_THEME
