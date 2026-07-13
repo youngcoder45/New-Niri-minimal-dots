@@ -27,7 +27,7 @@ binds {
     Mod+V { spawn "Vesktop"; }
     Mod+E { spawn "nautilus"; }
     Mod+B { spawn "firefox"; }
-    Mod+Z { spawn "/home/aditya/.local/bin/zed";}
+    Mod+Z { spawn "__HOME__/.local/bin/zed";}
     Alt+Return { spawn "kitty";}
 
 

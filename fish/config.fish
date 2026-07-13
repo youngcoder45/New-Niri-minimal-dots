@@ -99,6 +99,5 @@ if status is-interactive
         end
     end
 end
-fish_add_path /home/aditya/.spicetify
 set -gx TERM xterm-256color
 set -e GTK_THEME
