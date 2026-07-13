@@ -16,8 +16,16 @@ dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
 sh -c 'while ! busctl --user status org.gnome.Mutter.ScreenCast >/dev/null 2>&1; do sleep 0.2; done; pkill -f xdg-desktop-portal-gnome' &
 
-# Wallpaper
-swaybg -i "$HOME/Pictures/wallpapers/dual_first_half.jpg" -m fill &
+# Wallpaper (random, with fallback)
+WALLPAPER_DIR="$HOME/Pictures/wallpapers"
+FALLBACK="$WALLPAPER_DIR/rogue.jpg"
+if [ -d "$WALLPAPER_DIR" ] && [ "$(ls -A "$WALLPAPER_DIR" 2>/dev/null)" ]; then
+    WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -name '*.jpg' -o -name '*.png' -o -name '*.jpeg' -o -name '*.webp' \) | shuf -n 1)
+    [ -z "$WALLPAPER" ] && WALLPAPER="$FALLBACK"
+else
+    WALLPAPER="$FALLBACK"
+fi
+swaybg -i "$WALLPAPER" -m fill &
 
 # Notifications
 mako &

@@ -1,0 +1,137 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "restore_on_startup": "launchpad",
+  // "show_edit_predictions": true,
+
+  "terminal": {
+    "font_size": 10.0,
+  },
+
+  "tabs": {
+    "git_status": true,
+  },
+
+  "title_bar": {
+    "show_menus": false,
+    "show_branch_icon": false,
+  },
+
+  "status_bar": {
+    "active_language_button": true,
+  },
+
+  "project_panel": {
+    "button": true,
+  },
+
+  "hide_mouse": "on_typing",
+  "agent_ui_font_size": 14.0,
+  "ui_font_family": ".ZedSans",
+
+  "session": {
+    "trust_all_worktrees": true,
+  },
+
+  "redact_private_values": false,
+  "disable_ai": false,
+  "show_edit_predictions": true,
+  "edit_predictions": {
+    "enabled_in_text_threads": false,
+    "mode": "subtle",
+  },
+  "agent": {
+    "tool_permissions": {
+      "tools": {
+        "terminal": {
+          "default": "allow"
+        }
+      }
+    },
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-2.5-flash",
+      "enable_thinking": true
+    },
+    "favorite_models": [],
+    "default_profile": "write",
+    "model_parameters": [],
+  },
+
+  "tab_bar": {
+    "show_tab_bar_buttons": false,
+  },
+
+  "show_signature_help_after_edits": false,
+  "auto_signature_help": false,
+
+  "sticky_scroll": {
+    "enabled": false,
+  },
+
+  "buffer_font_family": "Fira Code",
+
+  "file_types": {
+    "ini": ["config"],
+  },
+
+  "show_completions_on_input": true,
+
+  "soft_wrap": "editor_width",
+
+  "telemetry": {
+    "diagnostics": true,
+    "metrics": false,
+  },
+
+  "base_keymap": "VSCode",
+
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Material Icon Theme",
+  },
+
+  "ui_font_size": 15.0,
+  "buffer_font_size": 11.0,
+
+  "theme": {
+    "mode": "dark",
+    "light": "macOS Classic Light",
+    "dark": "GitHub Dark",
+  },
+
+  "languages": {
+    "HTML": {
+      "show_completions_on_input": true,
+      "language_servers": ["html", "emmet-language-server"],
+    },
+    "CSS": {
+      "language_servers": ["css", "emmet-language-server"],
+    },
+    "JavaScript": {
+      "language_servers": [
+        "typescript-language-server",
+        "emmet-language-server",
+      ],
+    },
+    "TSX": {
+      "language_servers": [
+        "typescript-language-server",
+        "emmet-language-server",
+      ],
+    },
+    "JSX": {
+      "language_servers": [
+        "typescript-language-server",
+        "emmet-language-server",
+      ],
+    },
+  },
+}

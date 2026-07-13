@@ -115,3 +115,4 @@ cowsay
 figlet
 toilet
 sl
+zed

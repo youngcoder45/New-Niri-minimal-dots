@@ -1,0 +1,87 @@
+{
+  "Basic CPP": {
+    "prefix": "boi",
+    "description": "Basic C++ template",
+    "body": [
+      "#include <iostream>",
+      "using namespace std;",
+      "",
+      "int main() {",
+      "    $0",
+      "    return 0;",
+      "}"
+    ]
+  },
+  "Advanced CPP Template": {
+    "prefix": "adv",
+    "description": "Advanced competitive programming template",
+    "body": [
+      "#include <bits/stdc++.h>",
+      "using namespace std;",
+      "",
+      "using ll = long long;",
+      "using ld = long double;",
+      "using pii = pair<int,int>;",
+      "using pll = pair<ll,ll>;",
+      "",
+      "#define all(x) (x).begin(), (x).end()",
+      "#define pb push_back",
+      "#define ff first",
+      "#define ss second",
+      "",
+      "void solve() {",
+      "    $0",
+      "}",
+      "",
+      "int main() {",
+      "    ios::sync_with_stdio(false);",
+      "    cin.tie(nullptr);",
+      "",
+      "    int t = 1;",
+      "    cin >> t;",
+      "    while (t--) solve();",
+      "",
+      "    return 0;",
+      "}"
+    ]
+  },
+  "Competitive Programming": {
+    "prefix": "cp",
+    "description": "Competitive programming template",
+    "body": [
+      "#include <bits/stdc++.h>",
+      "using namespace std;",
+      "",
+      "#define ll long long",
+      "#define endl '\\n'",
+      "",
+      "int main() {",
+      "    ios::sync_with_stdio(false);",
+      "    cin.tie(nullptr);",
+      "",
+      "    $0",
+      "",
+      "    return 0;",
+      "}"
+    ]
+  },
+
+  "Solve Function Template": {
+    "prefix": "solve",
+    "description": "CP solve function template",
+    "body": [
+      "void solve() {",
+      "    $0",
+      "}",
+      "",
+      "int main() {",
+      "    ios::sync_with_stdio(false);",
+      "    cin.tie(nullptr);",
+      "",
+      "    int t;",
+      "    cin >> t;",
+      "    while (t--) solve();",
+      "}"
+    ]
+  }
+}

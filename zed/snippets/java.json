@@ -1,0 +1,85 @@
+{
+  "Basic Java": {
+    "prefix": "java",
+    "description": "Basic Java program",
+    "body": [
+      "public class Main {",
+      "    public static void main(String[] args) {",
+      "        $0",
+      "    }",
+      "}"
+    ]
+  },
+
+  "Java Competitive Programming": {
+    "prefix": "javacp",
+    "description": "Java CP template",
+    "body": [
+      "import java.io.*;",
+      "import java.util.*;",
+      "",
+      "public class Main {",
+      "",
+      "    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));",
+      "    static StringTokenizer st;",
+      "",
+      "    static String next() throws IOException {",
+      "        while (st == null || !st.hasMoreElements()) {",
+      "            st = new StringTokenizer(br.readLine());",
+      "        }",
+      "        return st.nextToken();",
+      "    }",
+      "",
+      "    static int nextInt() throws IOException {",
+      "        return Integer.parseInt(next());",
+      "    }",
+      "",
+      "    static long nextLong() throws IOException {",
+      "        return Long.parseLong(next());",
+      "    }",
+      "",
+      "    static void solve() throws Exception {",
+      "        $0",
+      "    }",
+      "",
+      "    public static void main(String[] args) throws Exception {",
+      "        int t = 1;",
+      "        // t = nextInt();",
+      "",
+      "        while (t-- > 0) {",
+      "            solve();",
+      "        }",
+      "    }",
+      "}"
+    ]
+  },
+
+  "Class Template": {
+    "prefix": "class",
+    "description": "Java class template",
+    "body": [
+      "public class ${1:ClassName} {",
+      "    $0",
+      "}"
+    ]
+  },
+
+  "Method Template": {
+    "prefix": "method",
+    "description": "Java method template",
+    "body": [
+      "public static ${1:void} ${2:methodName}(${3}) {",
+      "    $0",
+      "}"
+    ]
+  },
+
+  "Scanner Template": {
+    "prefix": "scan",
+    "description": "Scanner input template",
+    "body": [
+      "Scanner sc = new Scanner(System.in);",
+      "$0"
+    ]
+  }
+}

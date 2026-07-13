@@ -1,0 +1,63 @@
+{
+  "Basic C": {
+    "prefix": "boi",
+    "description": "Basic C program",
+    "body": [
+      "#include <stdio.h>",
+      "",
+      "int main(void) {",
+      "    $0",
+      "    return 0;",
+      "}"
+    ]
+  },
+
+  "Advanced C": {
+    "prefix": "adv",
+    "description": "Advanced C competitive programming template",
+    "body": [
+      "#include <stdio.h>",
+      "#include <stdlib.h>",
+      "#include <string.h>",
+      "#include <math.h>",
+      "#include <limits.h>",
+      "",
+      "#define ll long long",
+      "#define MAX(a,b) ((a) > (b) ? (a) : (b))",
+      "#define MIN(a,b) ((a) < (b) ? (a) : (b))",
+      "",
+      "void solve(void) {",
+      "    $0",
+      "}",
+      "",
+      "int main(void) {",
+      "    int t = 1;",
+      "    /* scanf(\"%d\", &t); */",
+      "",
+      "    while (t--) {",
+      "        solve();",
+      "    }",
+      "",
+      "    return 0;",
+      "}"
+    ]
+  },
+
+  "Struct Template": {
+    "prefix": "struct",
+    "description": "C struct template",
+    "body": ["typedef struct {", "    $0", "} ${1:Name};"]
+  },
+
+  "Dynamic Array": {
+    "prefix": "malloc",
+    "description": "Allocate dynamic array",
+    "body": [
+      "${1:int} *${2:arr} = malloc(${3:n} * sizeof(${1:int}));",
+      "if (${2:arr} == NULL) {",
+      "    return 1;",
+      "}",
+      "$0"
+    ]
+  }
+}

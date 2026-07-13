@@ -288,7 +288,6 @@ environment {
 spawn-at-startup "~/.config/niri/autostart.sh"
 spawn-at-startup "nm-applet"
 spawn-at-startup "gnome-keyring-daemon --start --components=pkcs11,secrets,ssh"
-//spawn-at-startup "__HOME__/.local/bin/niri-idle"
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 //spawn-sh-at-startup "qs -c ~/.config/quickshell/noctalia-shell"
 

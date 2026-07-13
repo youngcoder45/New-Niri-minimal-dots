@@ -1,0 +1,89 @@
+{
+  "Basic Go": {
+    "prefix": "go",
+    "description": "Basic Go program",
+    "body": [
+      "package main",
+      "",
+      "import \"fmt\"",
+      "",
+      "func main() {",
+      "    $0",
+      "}"
+    ]
+  },
+
+  "Go Competitive Programming": {
+    "prefix": "gocp",
+    "description": "Go competitive programming template",
+    "body": [
+      "package main",
+      "",
+      "import (",
+      "    \"bufio\"",
+      "    \"fmt\"",
+      "    \"os\"",
+      ")",
+      "",
+      "var (",
+      "    in  = bufio.NewReaderSize(os.Stdin, 1<<20)",
+      "    out = bufio.NewWriterSize(os.Stdout, 1<<20)",
+      ")",
+      "",
+      "func solve() {",
+      "    $0",
+      "}",
+      "",
+      "func main() {",
+      "    defer out.Flush()",
+      "",
+      "    t := 1",
+      "    // fmt.Fscan(in, &t)",
+      "",
+      "    for ; t > 0; t-- {",
+      "        solve()",
+      "    }",
+      "}"
+    ]
+  },
+
+  "Function Template": {
+    "prefix": "func",
+    "description": "Function template",
+    "body": [
+      "func ${1:name}(${2}) ${3} {",
+      "    $0",
+      "}"
+    ]
+  },
+
+  "Struct Template": {
+    "prefix": "struct",
+    "description": "Struct template",
+    "body": [
+      "type ${1:Name} struct {",
+      "    $0",
+      "}"
+    ]
+  },
+
+  "For Loop": {
+    "prefix": "fori",
+    "description": "Indexed for loop",
+    "body": [
+      "for i := 0; i < ${1:n}; i++ {",
+      "    $0",
+      "}"
+    ]
+  },
+
+  "Range Loop": {
+    "prefix": "range",
+    "description": "Range loop",
+    "body": [
+      "for ${1:i}, ${2:v} := range ${3:slice} {",
+      "    $0",
+      "}"
+    ]
+  }
+}
