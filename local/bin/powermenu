@@ -5,7 +5,7 @@ CHOICE=$(printf "Lock\nLogout\nReboot\nShutdown\n" | \
 
 case "$CHOICE" in
   "Lock")
-    swaylock -f -c 000000
+    gtklock --config "$HOME/.config/niri-lock/config.ini"
     ;;
   "Logout")
     niri msg quit

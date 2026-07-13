@@ -21,6 +21,6 @@ case "$CHOICE" in
         niri msg action quit
         ;;
     *"Lock")
-        swaylock
+        gtklock --config "$HOME/.config/niri-lock/config.ini"
         ;;
 esac
