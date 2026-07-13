@@ -9,17 +9,20 @@ waybar
 fuzzel
 mako
 wlogout
-swaylock
 swaybg
 nm-applet
 polkit-gnome
 gnome-keyring
+sddm
+nwg-look
 
 # ── Terminal & Shell ───────────────────────────────────────────
 alacritty
+kitty
 fish
 starship
 fastfetch
+neofetch
 
 # ── Clipboard ──────────────────────────────────────────────────
 wl-clipboard
@@ -30,16 +33,16 @@ pipewire
 pipewire-pulse
 pipewire-alsa
 wireplumber
-playerctl
-pamixer
 pavucontrol
 cava
 
 # ── Video ──────────────────────────────────────────────────────
 mpv
+vlc
 
 # ── Brightness & Power ────────────────────────────────────────
 brightnessctl
+upower
 
 # ── Bluetooth ──────────────────────────────────────────────────
 bluez
@@ -50,6 +53,7 @@ networkmanager
 network-manager-applet
 
 # ── Screenshots ────────────────────────────────────────────────
+flameshot
 grim
 slurp
 swappy
@@ -57,36 +61,57 @@ imagemagick
 
 # ── File Manager ───────────────────────────────────────────────
 nnn
-nnn-plugins
+nautilus
+
+# ── Lock Screen ────────────────────────────────────────────────
+gtklock
 
 # ── Development ────────────────────────────────────────────────
 neovim
 git
 lazygit
+code
+python
+python-pip
+nodejs
+npm
+rust
 
 # ── System Monitor ─────────────────────────────────────────────
 bottom
 btop
 
 # ── Terminal Utilities ─────────────────────────────────────────
-eza
-bat
 fd
 ripgrep
 fzf
 zoxide
-jq
 unzip
-p7zip
+7zip
 unrar
 less
 tree
+tldr
+ripgrep-all
 
 # ── Fonts ──────────────────────────────────────────────────────
 ttf-firacode-nerd
-noto-fonts
 noto-fonts-emoji
-noto-fonts-cjk
 
 # ── Misc ───────────────────────────────────────────────────────
-polkit
+papirus-icon-theme
+bibata-cursor-theme
+adw-gtk-theme
+dracula-gtk-theme
+qt6ct
+qt5ct
+font-manager
+obsidian
+obs-studio
+godot
+pomoru
+cmatrix
+cowsay
+figlet
+toilet
+sl
