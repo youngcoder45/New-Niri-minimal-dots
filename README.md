@@ -36,8 +36,7 @@
 - **Fish** — smart shell with Catppuccin Mocha syntax highlighting
 - **Catppuccin Mocha** — cohesive color scheme across all components
 - **Custom scripts** — clipboard history, notification history, power menu, wallpaper picker
-- **gtklock** — styled lock screen with wallpaper background
-- **niri-idle** — auto-lock after 5 minutes of inactivity
+- **gtklock** — styled lock screen
 - **Minimal footprint** — no unnecessary bloat
 
 ---
@@ -283,8 +282,6 @@ sudo systemctl enable sddm
 │   ├── window_rules.kdl
 │   ├── autostart.sh
 │   └── index.theme
-├── niri-idle/          # Auto-lock daemon
-│   └── config.toml
 ├── niri-lock/          # Lock screen
 │   ├── config.ini
 │   ├── lock.sh
@@ -314,6 +311,10 @@ sudo systemctl enable sddm
 │   ├── layout
 │   ├── style.css
 │   └── icons/
+├── zed/                # Zed editor
+│   ├── settings.json
+│   ├── snippets/
+│   └── themes/
 ├── wallpapers/         # Wallpaper storage
 ├── Screenshots/        # Repository screenshots
 ├── packages.txt        # Package list
@@ -357,10 +358,6 @@ Edit `waybar/config.jsonc` and add modules to `modules-left`, `modules-center`, 
 ### Q: How do I change the terminal font?
 
 Edit `alacritty/alacritty.toml` for Alacritty or `kitty/kitty.conf` for Kitty.
-
-### Q: How do I disable auto-lock?
-
-Edit `niri-idle/config.toml` and set `timeout = 0` or remove the file.
 
 ---
 

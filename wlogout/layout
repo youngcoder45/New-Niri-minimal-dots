@@ -1,7 +1,7 @@
 [
     {
         "label" : "lock",
-        "action" : "swaylock",
+        "action" : "gtklock --config __HOME__/.config/niri-lock/config.ini",
         "text" : "Lock",
         "keybind" : "l"
     },
