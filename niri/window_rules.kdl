@@ -1,0 +1,181 @@
+// Window rules let you adjust behavior for individual windows.
+// Find more information on the wiki:
+// https://yalter.github.io/niri/Configuration:-Window-Rules
+
+// Work around WezTerm's initial configure bug
+// by setting an empty default-column-width.
+window-rule {
+    // This regular expression is intentionally made as specific as possible,
+    // since this is the default config, and we want no false positives.
+    // You can get away with just app-id="wezterm" if you want.
+    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    default-column-width {}
+}
+
+window-rule {
+    match app-id="Alacritty"
+    opacity 0.9
+    background-effect {
+        blur true
+    }
+}
+window-rule{
+  match app-id="org.gnome.Nautilus"
+  open-maximized true
+  opacity 0.9
+  background-effect {
+        blur true
+    }
+}
+window-rule {
+    match app-id="brave-browser"
+    opacity 0.9
+    open-maximized true
+    background-effect {
+        blur true
+    }
+}
+
+window-rule {
+    match app-id="nwg-look"
+    opacity 0.9
+    open-maximized true
+    background-effect {
+        blur true
+    }
+}
+
+window-rule {
+    match app-id="Tk"
+    open-floating true
+    background-effect {
+        blur false
+    }
+}
+window-rule {
+    match app-id="Matplotlib"
+    open-floating true
+    background-effect {
+        blur false
+    }
+}
+
+window-rule {
+    match app-id="dev.zed.Zed"
+    opacity 0.8
+    open-maximized true
+    background-effect {
+        blur true
+    }
+}
+
+window-rule {
+    match app-id="firefox"
+    opacity 0.8
+    background-effect {
+    blur true
+    }
+    open-maximized true
+}
+window-rule {
+    match app-id="vesktop"
+    opacity 0.85
+    open-maximized true
+    background-effect {
+        blur true
+    }
+}
+window-rule {
+    match app-id="com.obsproject.Studio"
+    opacity 0.9
+    open-maximized true
+    background-effect {
+        blur true
+    }
+}
+window-rule{
+  match app-id="Godot"
+  open-maximized true
+  opacity 0.9
+  background-effect {
+        blur true
+    }
+}
+
+window-rule{
+  match app-id="code-oss"
+  open-maximized true
+  opacity 0.9
+  background-effect {
+        blur true
+    }
+}
+
+window-rule{
+  match app-id="nvim"
+  open-maximized true
+  background-effect {
+        blur true
+    }
+}
+
+window-rule {
+    match app-id="discord"
+    opacity 0.9
+    open-maximized true
+    background-effect {
+        blur true
+    }
+}
+window-rule {
+    match app-id="obsidian"
+    opacity 0.9
+    open-maximized true
+    background-effect {
+        blur true
+    }
+}
+
+
+layer-rule {
+    match namespace="^waybar$"
+    /*opacity 1.0*/
+    geometry-corner-radius 0
+    background-effect {
+        blur true
+    }
+}
+layer-rule {
+    match namespace="^launcher$"
+    background-effect {
+        blur true
+    }
+}
+
+// Open the Firefox picture-in-picture player as floating by default.
+window-rule {
+    // This app-id regular expression will work for both:
+    // - host Firefox (app-id is "firefox")
+    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+// Example: block out two password managers from screen capture.
+// (This example rule is commented out with a "/-" in front.)
+/-window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+
+    block-out-from "screen-capture"
+
+    // Use this instead if you want them visible on third-party screenshot tools.
+    // block-out-from "screencast"
+}
+
+// Example: enable rounded corners for all windows.
+// (This example rule is commented out with a "/-" in front.)
+window-rule {
+    geometry-corner-radius 20
+    clip-to-geometry true
+}

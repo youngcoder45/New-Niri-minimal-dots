@@ -1,0 +1,15 @@
+[Icon Theme]
+Name=Local Niri Icons
+Comment=Local icons and cursor themes for niri session
+Inherits=Bibata-Modern-Classic
+Directories=48x48
+
+[48x48]
+Size=48
+Context=Cursor
+Type=Fixed
+
+
+# If you want to provide a simple cursor symlink layout, create a
+# subdirectory here and place the cursor theme files or symlinks. For most
+# users installing a system cursor theme (e.g. via your distro) is sufficient.

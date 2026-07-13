@@ -1,24 +1,32 @@
 #!/bin/sh
 
-# Niri autostart applications
+# Cursor
+export XCURSOR_THEME="Bibata-Modern-Classic"
+export XCURSOR_SIZE=24
+export XCURSOR_PATH="$HOME/.config/niri:$HOME/.icons:$HOME/.local/share/icons:/usr/share/icons"
 
-# Random wallpaper from ~/Pictures/wallpapers/
-WALLPAPER_DIR="$HOME/Pictures/wallpapers"
-if [ -d "$WALLPAPER_DIR" ]; then
-    WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -name '*.jpg' -o -name '*.png' -o -name '*.webp' \) 2>/dev/null | shuf -n1)
-    if [ -n "$WALLPAPER" ]; then
-        swaybg -i "$WALLPAPER" -m fill &
-    fi
-fi
+# CRITICAL ENV (FIXED)
+export XDG_CURRENT_DESKTOP=niri
+export XDG_SESSION_DESKTOP=niri
+export XDG_SESSION_TYPE=wayland
+export GTK_USE_PORTAL=1
 
-# Notification daemon
+# Export to DBus (REQUIRED)
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
+
+sh -c 'while ! busctl --user status org.gnome.Mutter.ScreenCast >/dev/null 2>&1; do sleep 0.2; done; pkill -f xdg-desktop-portal-gnome' &
+
+# Wallpaper
+swaybg -i "$HOME/Pictures/wallpapers/dual_first_half.jpg" -m fill &
+
+# Notifications
 mako &
 
-# Clipboard history
+# Clipboard
 wl-paste --watch cliphist store &
 
-# Status bar
+# Bar
 waybar &
 
-# Polkit agent (needed for mounts, permissions)
+# Polkit
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
