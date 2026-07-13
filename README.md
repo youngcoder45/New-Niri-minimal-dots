@@ -1,174 +1,395 @@
-# Niri Minimal Dotfiles 🌿
+<p align="center">
+  <img src="Screenshots/landing.png" alt="Niri Minimal Dots" width="800">
+</p>
 
-![Stars](https://img.shields.io/github/stars/youngcoder45/New-Niri-minimal-dots?style=for-the-badge&logo=starship&color=cba6f7&logoColor=1e1e2e)
-![Forks](https://img.shields.io/github/forks/youngcoder45/New-Niri-minimal-dots?style=for-the-badge&logo=git&color=89b4fa&logoColor=1e1e2e)
+<h1 align="center">Niri Minimal Dots</h1>
 
-> A highly configured, minimal, and aesthetic collection of dotfiles for the [Niri](https://github.com/YaLTeR/niri) scrollable tiling window manager. 
+<p align="center">
+  A clean, minimal <a href="https://github.com/YaLTeR/niri">Niri</a> Wayland compositor configuration for Arch Linux with Tokyo Night theme.
+</p>
 
-This setup focuses on a clean **"Noctalia"** dark theme, modular configuration, and a keyboard-centric workflow. Everything is designed to work together seamlessly with a consistent color palette and typography.
----
-
-## 📸 Gallery
-
-If you are just browsing, here is what this setup looks like.
-
-| **Desktop & Waybar** | **Window Overview** |
-|:---:|:---:|
-| ![Desktop](Screenshots/desktopnwaybar.png) | ![Overview](Screenshots/overview.png) |
-| *Clean desk with modular Waybar* | *Niri's scrollable window overview* |
-| **Wallpaper picker** | **Lazy Vim** |
-|:---:|:---:|
-| ![Fuzzel](Screenshots/wallpaperpicker.png) | ![LazyVim](Screenshots/lazyvim.png) |
-| *Fuzzel wallpaper picker* | *Lazygit terminal UI* |
-
-| **OBS Studio** | **Btop System Monitor** |
-|:---:|:---:|
-| ![OBS](Screenshots/OBS.png) | ![Btop](Screenshots/btopbtm.png) |
-| *OBS Studio with Normal theme* | *Btop with Glassy Frost theme* |
-
-
-| **Terminal (Alacritty)** | **File Manager (Ranger)** |
-|:---:|:---:|
-| ![Terminal](Screenshots/alacritty.png) | ![Ranger](Screenshots/ranger.png) |
-| *Alacritty + Fish + Starship* | *Ranger console file manager* |
-
-| **Audio Visualizer** | **Obsidian Notes** |
-|:---:|:---:|
-| ![Cava](Screenshots/cava.png) | ![Obsidian](Screenshots/obsidian.png) |
-| *Custom Cava visualizer* | *Knowledge base & notes* |
-
-| **Game Dev (Godot)** | **Communication (Discord)** |
-|:---:|:---:|
-| ![Godot](Screenshots/godot.png) | ![Discord](Screenshots/discord.png) |
-| *Godot Engine themed* | *Discord client* |
-
-| **Main Landing Page** |
-|:---:|
-| ![Main](Screenshots/landing.png) |
-| *Main landing page with custom wallpaper* |
----
-
-## 🧩 Components
-
-Detailed list of all applications and tools configured in this repository.
-
-| **Category** | **Application** | **Config Path** | **Description** |
-|:---:|:---|:---|:---|
-| **Window Manager** | [Niri](https://github.com/YaLTeR/niri) | `niri/` | Infinite scrolling tiling WM for Wayland. |
-| **Status Bar** | [Waybar](https://github.com/Alexays/Waybar) | `waybar/` | Highly customizable modular status bar. |
-| **Terminal** | [Alacritty](https://github.com/alacritty/alacritty) | `alacritty/` | GPU-accelerated terminal emulator. |
-| **Shell** | [Fish](https://fishshell.com/) | `fish/` | User-friendly command line shell. |
-| **Prompt** | [Starship](https://starship.rs/) | `prompt/` | Cross-shell customizable prompt. |
-| **Editor** | [Neovim](https://neovim.io/) | `nvim/` | Powered by [NvChad](https://nvchad.com) v2.5. |
-| **Launcher** | [Fuzzel](https://codeberg.org/dnkl/fuzzel) | `fuzzel/` | Wayland-native application launcher. |
-| **System Monitor** | [Btop](https://github.com/aristocratos/btop) | `btop/` | Resource monitor (Glassy Frost / Material You themes). |
-| **File Manager** | [Yazi](https://github.com/sxyazi/yazi) | `yazi/` | Blazing fast terminal file manager (Rust). |
-|  | [Ranger](https://github.com/ranger/ranger) | `ranger/` | VIM-inspired file manager. |
-|  | [Nautilus](https://apps.gnome.org/Nautilus/) | `nautilus/` | GUI file manager integration. |
-| **Notifications** | [Mako](https://github.com/emersion/mako) | `mako/` | Lightweight notification daemon. |
-| **Lock Screen** | [Swaylock](https://github.com/swaywm/swaylock) | `swaylock/` | Screen locker for Wayland. |
-| **Logout Menu** | [Wlogout](https://github.com/ArtsyMacaw/wlogout) | `wlogout/` | Wayland based logout menu. |
-| **Media Player** | [MPV](https://mpv.io/) | `mpv/` | Video player with `modernz` script. |
-| **Visualizer** | [Cava](https://github.com/karlstav/cava) | `cava/` | Console-based audio visualizer with shaders. |
-| **Screenshot** | [Swappy](https://github.com/jomo/swappy) | `swappy/` | Wayland native snapshot editing tool. |
-| **Git Client** | [Lazygit](https://github.com/jesseduffield/lazygit) | `lazygit/` | Simple terminal UI for git commands. |
-| **Notes** | [Obsidian](https://obsidian.md/) | `obsidian/` | Knowledge base configuration. |
-| **Multiplexer** | [Tmux](https://github.com/tmux/tmux) | `tmux/` | Terminal multiplexer. |
-| **Productivity** | [Pomoru](https://github.com/fry69/pomoru) | `pomoru/` | Pomodoro timer. |
+<p align="center">
+  <img src="https://img.shields.io/badge/Niri-Wayland_compositor-5E9FD6?style=flat-square&logo=gnome-terminal&logoColor=white" alt="Niri">
+  <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=flat-square&logo=archlinux&logoColor=white" alt="Arch Linux">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="MIT License">
+</p>
 
 ---
 
-## ⌨️ Keybindings
+## Preview
 
-Essential keybindings for navigating the Niri environment. See `niri/keybinds.kdl` for the full list.
+| Desktop | Terminal | Waybar |
+|---------|----------|--------|
+| ![Desktop](Screenshots/desktopnwaybar.png) | ![Terminal](Screenshots/alacritty.png) | ![Waybar](Screenshots/overview.png) |
 
-| **Key Combination** | **Action** |
-|:---|:---|
-| <kbd>Mod</kbd> + <kbd>Return</kbd> | Open Terminal (`Alacritty`) |
-| <kbd>Mod</kbd> + <kbd>Space</kbd> | Open App Launcher (`Fuzzel`) |
-| <kbd>Mod</kbd> + <kbd>C</kbd> | Open VS Code (`Code`) |
-| <kbd>Mod</kbd> + <kbd>B</kbd> | Open Browser (`Brave`) |
-| <kbd>Mod</kbd> + <kbd>E</kbd> | Open File Manager (`Nautilus`) |
-| <kbd>Mod</kbd> + <kbd>T</kbd> | Power Menu (`Wlogout`) |
-| <kbd>Super</kbd> + <kbd>Alt</kbd> + <kbd>L</kbd> | Lock Screen (`Swaylock`) |
-| <kbd>Mod</kbd> + <kbd>Shift</kbd> + <kbd>/</kbd> | Show Hotkey Overlay |
-| <kbd>XF86AudioRaiseVolume</kbd> | Volume Up |
-| <kbd>XF86AudioLowerVolume</kbd> | Volume Down |
-| <kbd>XF86AudioPlay</kbd> | Play/Pause Media |
+| Launcher | Wallpaper Picker | Power Menu |
+|----------|-----------------|------------|
+| ![Launcher](Screenshots/lazyvim.png) | ![Wallpapers](Screenshots/wallpaperpicker.png) | ![Power](Screenshots/cava.png) |
 
 ---
 
-## 🛠️ Installation
+## Features
 
-### 1. Requirements
-Ensure you have the required packages installed. On Arch Linux:
-```bash
-sudo pacman -S niri waybar alacritty fish starship neovim btop yazi ranger fuzzel mako swaylock wlogout mpv cava swappy tmux lazygit
-```
+- **Niri** — scrollable tiling Wayland compositor
+- **Waybar** — modular status bar with 15+ modules
+- **Fuzzel** — fast Wayland-native application launcher
+- **Fish** — smart shell with syntax highlighting and completions
+- **Tokyo Night** — cohesive color scheme across all components
+- **Custom scripts** — volume, bluetooth, network, weather, clipboard, and more
+- **Random wallpapers** — new wallpaper on every login
+- **Minimal footprint** — no unnecessary bloat
 
-### 2. Clone Repository
-Clone this repository to your minimal dotfiles folder (or directly to `.config` if you prefer manual management, though using `stow` is recommended).
+---
+
+## Applications Used
+
+| Category | Application |
+|----------|-------------|
+| Compositor | [Niri](https://github.com/YaLTeR/niri) |
+| Bar | [Waybar](https://github.com/Alexays/Waybar) |
+| Launcher | [Fuzzel](https://codeberg.org/dnkl/fuzzel) |
+| Terminal | [Alacritty](https://github.com/alacritty/alacritty) |
+| Shell | [Fish](https://fishshell.com/) |
+| Prompt | [Starship](https://starship.rs/) |
+| Notification Daemon | [Mako](https://github.com/emersion/mako) |
+| Lock Screen | [Swaylock](https://github.com/swaywm/swaylock) |
+| Power Menu | [Wlogout](https://github.com/nicoplv/wlogout) |
+| Clipboard | [Cliphist](https://github.com/sentriz/cliphist) + [wl-clipboard](https://github.com/bugaevc/wl-clipboard) |
+| Screenshot | Niri built-in + [Swappy](https://github.com/jtheo/swappy) |
+| Wallpaper | [Swaybg](https://github.com/swaywm/swaybg) |
+| File Manager | [nnn](https://github.com/jarun/nnn) |
+| Code Editor | [Neovim](https://neovim.io/) + [VS Code](https://code.visualstudio.com/) |
+| Browser | [Brave](https://brave.com/) |
+| Media Player | [mpv](https://mpv.io/) + [VLC](https://www.videolan.org/) |
+| System Monitor | [Bottom](https://github.com/ClementTsang/bottom) + [btop](https://github.com/aristocratos/btop) |
+| Audio Visualizer | [Cava](https://github.com/kornerc/cava) |
+| Git UI | [Lazygit](https://github.com/jesseduffield/lazygit) |
+| System Info | [Fastfetch](https://github.com/fastfetch-cli/fastfetch) |
+| Pomodoro | [Pomoru](https://github.com/animeai/pomoru) |
+| Network | [NetworkManager](https://networkmanager.dev/) |
+| Bluetooth | [BlueZ](https://www.bluez.org/) |
+
+---
+
+## Installation
+
+### Prerequisites
+
+- Fresh Arch Linux installation
+- Internet connection
+- SDDM display manager (recommended)
+
+### Quick Start
 
 ```bash
-git clone https://github.com/youngcoder45/new-niri-minimal.git
-cd new-niri-minimal
+# Clone the repository
+git clone https://github.com/youngcoder45/New-Niri-minimal-dots.git ~/.config
+cd ~/.config
+
+# Run the installer
+chmod +x install.sh
+./install.sh
+
+# Reboot
+sudo reboot
 ```
 
-### 3. Deploy Configs
-Copy the folders to your `~/.config/` directory.
+### Manual Installation
 
 ```bash
-cp -r niri waybar alacritty fish btop fuzzel mako swaylock wlogout ~/.config/
-# Add others as needed
+# Install packages
+sudo pacman -S --needed - < packages.txt
+
+# Install yay (AUR helper)
+git clone https://aur.archlinux.org/yay-bin.git /tmp/yay-bin
+cd /tmp/yay-bin && makepkg -si
+
+# Install AUR packages
+yay -S ttf-firacode-nerd papirus-icon-theme bibata-cursor-theme tokyo-night-gtk-theme
+
+# Symlink configs (example for niri)
+ln -sfn ~/.config/niri ~/.config/niri
+
+# Set fish as default shell
+chsh -s /usr/bin/fish
 ```
 
-*Note: For the scripts and custom themes to work correctly, ensure you have the `prompt` folder configured and fonts installed (Nerd Fonts recommended).*
+---
+
+## Dependencies
+
+### Required Packages
+
+```
+niri waybar fuzzel mako wlogout swaylock swaybg
+alacritty fish starship fastfetch
+wl-clipboard cliphist
+pipewire pipewire-pulse pipewire-alsa wireplumber playerctl pamixer pavucontrol cava
+brightnessctl
+bluez bluez-utils
+networkmanager network-manager-applet
+grim slurp swappy imagemagick
+nnn nnn-plugins
+neovim git lazygit
+bottom btop
+mpv
+eza bat fd ripgrep fzf zoxide jq unzip p7zip unrar less tree
+ttf-firacode-nerd noto-fonts noto-fonts-emoji noto-fonts-cjk
+polkit-gnome gnome-keyring
+```
+
+### AUR Packages
+
+```
+ttf-firacode-nerd
+papirus-icon-theme
+bibata-cursor-theme
+tokyo-night-gtk-theme
+```
 
 ---
 
-## ⚙️ Features
+## Fonts
 
-- **Modular Waybar:** `waybar/modules/` splits configuration for easier editing.
-- **Custom ZSH-like Fish:** Experience the power of Fish with a setup that feels like a turbocharged ZSH.
-- **NvChad Integrated:** Drop-in replacement for standard Nvim config.
-- **Unified Theming:** **Noctalia** theme consistency across terminal, window manager, and UI apps.
-- **Hardware Acceleration:** Configured for optimal performance on supported GPUs.
+| Font | Used In |
+|------|---------|
+| FiraCode Nerd Font | Alacritty, Fuzzel, Swaylock |
 
----
-
-## 🔮 Future Plans
-
-- [ ]  Add Dark / Light mode toggle script
-- [ ]  Improve `swaylock` visual effects
-- [ ]  Create an automated installation script (`install.sh`)
-- [ ]  Add more color schemes (Nord, Catppuccin, Gruvbox)
-- [ ]  Integrate `rofi` as an alternative launcher
+Install with: `sudo pacman -S ttf-firacode-nerd`
 
 ---
 
-## 🤝 Contributing
+## Themes
 
-Contributions are welcome! If you have any improvements, bug fixes, or new feature ideas, please feel free to contribute.
-
-1.  **Fork** the repository.
-2.  **Clone** your fork locally.
-3.  **Create a new branch** for your feature or fix.
-4.  **Commit** your changes with clear messages.
-5.  **Push** to your fork and submit a **Pull Request**.
-
-Please ensure your code follows the existing style and conventions.
+| Component | Theme |
+|-----------|-------|
+| GTK Theme | Tokyo Night |
+| QT Theme | Tokyo Night |
+| Icon Theme | Papirus |
+| Cursor Theme | Bibata-Modern-Classic |
+| Color Scheme | Tokyo Night |
 
 ---
 
-## ⭐ Star History
+## Directory Structure
 
-If you find this repository useful, please consider giving it a star!
+```
+├── alacritty/          # Terminal configuration
+│   └── alacritty.toml
+├── bottom/             # System monitor
+│   └── bottom.toml
+├── cava/               # Audio visualizer
+│   ├── config
+│   ├── shaders/
+│   └── themes/
+├── fastfetch/          # System info display
+│   └── config.jsonc
+├── fish/               # Shell configuration
+│   ├── config.fish
+│   └── conf.d/
+│       └── custom.fish
+├── fuzzel/             # Application launcher
+│   └── fuzzel.ini
+├── godot/              # Game engine settings
+│   └── editor_settings-4.5.tres
+├── lazygit/            # Git TUI
+│   └── config.yml
+├── mako/               # Notification daemon
+│   └── config
+├── mpv/                # Media player
+│   ├── mpv.conf
+│   ├── fonts/
+│   ├── script-opts/
+│   └── scripts/
+├── niri/               # Window manager
+│   ├── config.kdl
+│   ├── basicsettings.kdl
+│   ├── keybinds.kdl
+│   └── autostart.sh
+├── nvim/               # Code editor
+│   └── init.lua
+├── pomoru/             # Pomodoro timer
+│   └── config.toml
+├── prompt/             # Shell prompt
+│   └── starship.toml
+├── swappy/             # Screenshot annotation
+│   └── config
+├── swaylock/           # Lock screen
+│   └── config
+├── tmux/               # Terminal multiplexer
+│   └── tmux.conf
+├── vlc/                # Media player
+│   └── vlcrc
+├── waybar/             # Status bar
+│   ├── config.jsonc
+│   ├── style.css
+│   ├── themes/
+│   ├── modules/
+│   └── scripts/
+├── wlogout/            # Power menu
+│   ├── layout
+│   ├── style.css
+│   └── icons/
+├── wallpapers/         # Wallpaper storage
+├── screenshots/        # Repository screenshots
+├── packages.txt        # Package list
+├── install.sh          # Installation script
+├── LICENSE             # MIT License
+└── README.md           # This file
+```
 
-[![Star History Chart](https://api.star-history.com/svg?repos=youngcoder45/New-Niri-minimal-dots&type=Date)](https://star-history.com/#youngcoder45/New-Niri-minimal-dots&Date)
+---
+
+## Keybindings
+
+### Applications
+
+| Keybinding | Action |
+|------------|--------|
+| `Mod + Return` | Open terminal (Alacritty) |
+| `Mod + Space` | Application launcher (Fuzzel) |
+| `Mod + B` | Open browser (Brave) |
+| `Mod + C` | Open code editor (VS Code) |
+| `Mod + D` | Open Discord (Vesktop) |
+| `Mod + E` | Open file manager (Nautilus) |
+| `Super + Alt + L` | Lock screen (Swaylock) |
+| `Mod + Shift + Q` | Power menu (Wlogout) |
+
+### Window Management
+
+| Keybinding | Action |
+|------------|--------|
+| `Mod + Q` | Close window |
+| `Mod + F` | Maximize column |
+| `Mod + Shift + F` | Fullscreen window |
+| `Mod + V` | Toggle floating |
+| `Mod + Shift + V` | Switch focus floating/tiling |
+| `Mod + W` | Toggle tabbed column |
+| `Mod + R` | Cycle column width |
+| `Mod + H/J/K/L` | Focus left/down/up/right |
+| `Mod + Ctrl + H/J/K/L` | Move window left/down/up/right |
+
+### Workspaces
+
+| Keybinding | Action |
+|------------|--------|
+| `Mod + 1-9` | Switch to workspace 1-9 |
+| `Mod + Ctrl + 1-9` | Move window to workspace 1-9 |
+| `Mod + U/I` | Workspace down/up |
+| `Mod + Ctrl + U/I` | Move window to workspace down/up |
+
+### Monitors
+
+| Keybinding | Action |
+|------------|--------|
+| `Mod + Shift + H/J/K/L` | Focus monitor left/down/up/right |
+| `Mod + Shift + Ctrl + H/J/K/L` | Move window to monitor |
+
+### Media Keys
+
+| Keybinding | Action |
+|------------|--------|
+| `XF86AudioRaise/Lower` | Volume up/down |
+| `XF86AudioMute` | Toggle mute |
+| `XF86AudioMicMute` | Toggle mic mute |
+| `XF86AudioPlay/Prev/Next` | Media controls |
+| `XF86BrightnessUp/Down` | Brightness up/down |
+
+### Screenshots
+
+| Keybinding | Action |
+|------------|--------|
+| `Print` | Screenshot (all outputs) |
+| `Ctrl + Print` | Screenshot (current output) |
+| `Alt + Print` | Screenshot (current window) |
+
+---
+
+## Scripts
+
+All custom scripts are in `waybar/scripts/`:
+
+| Script | Description |
+|--------|-------------|
+| `powermenu.sh` | Fuzzel-based power menu |
+| `clipboard.sh` | Cliphist clipboard manager |
+| `bluetooth-control.sh` | Bluetooth device picker |
+| `bluetooth.sh` | Bluetooth status display |
+| `volume-control.sh` | Volume control with device selection |
+| `network-control.sh` | Network manager with WiFi scanning |
+| `weather.sh` | Weather display (wttr.in) |
+| `updates.sh` | Package update checker |
+| `notifications.sh` | Notification count display |
+| `battery-info.sh` | Battery information |
+| `mediaplayer.sh` | Media player status |
+| `launch-waybar.sh` | Waybar launcher |
+| `cava_to_waybar.py` | Cava visualizer for Waybar |
+
+---
+
+## FAQ
+
+### Q: How do I change the wallpaper?
+
+Place images in `~/Pictures/wallpapers/`. A random wallpaper will be selected on login.
+
+### Q: How do I change the color scheme?
+
+Edit the color values in:
+- `waybar/themes/colors.css` — Waybar colors
+- `waybar/style.css` — Waybar styling
+- `mako/config` — Notification colors
+- `fish/config.fish` — Fish syntax highlighting
+- `swaylock/config` — Lock screen colors
+
+### Q: How do I add more Waybar modules?
+
+Edit `waybar/config.jsonc` and add modules to `modules-left`, `modules-center`, or `modules-right`. Module definitions are in `waybar/modules/`.
+
+### Q: How do I change the terminal font?
+
+Edit `alacritty/alacritty.toml` and modify the `[font]` section.
+
+---
+
+## Troubleshooting
+
+### Waybar not showing
+```bash
+killall waybar
+~/.config/waybar/scripts/launch-waybar.sh
+```
+
+### No notifications
+```bash
+killall mako
+mako &
+```
+
+### Wallpaper not changing
+```bash
+# Test manually
+swaybg -i ~/Pictures/wallpapers/your-wallpaper.jpg -m fill &
+```
 
 ---
 
 ## Credits
 
-- **Wallpaper:** "Rogue" (Located in `niri/autostart.sh`)
-- **Theme:** Noctalia / Dank Theme / Glassy Frost
+- [Niri](https://github.com/YaLTeR/niri) — Wayland compositor
+- [Waybar](https://github.com/Alexays/Waybar) — Status bar
+- [Fuzzel](https://codeberg.org/dnkl/fuzzel) — Application launcher
+- [Tokyo Night](https://github.com/enkia/tokyo-night-vscode-theme) — Color scheme inspiration
+- [Catppuccin](https://github.com/catppuccin/catppuccin) — Fish shell colors
+
+---
+
+## License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+
+---
+
+<p align="center">
+  Made with ❤️ by <a href="https://github.com/youngcoder45">Aditya Verma</a>
+</p>

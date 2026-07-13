@@ -29,31 +29,31 @@ button:focus, button:active, button:hover {
 /* Specific button customizations */
 
 #lock {
-    background-image: image(url("/home/aditya/.config/wlogout/icons/lock.png"));
+    background-image: image(url("__HOME__/.config/wlogout/icons/lock.png"));
     border-color: #f7768e; /* Red */
 }
 
 #logout {
-    background-image: image(url("/home/aditya/.config/wlogout/icons/logout.png"));
+    background-image: image(url("__HOME__/.config/wlogout/icons/logout.png"));
     border-color: #fab387; /* Orange */
 }
 
 #suspend {
-    background-image: image(url("/home/aditya/.config/wlogout/icons/sleep.png"));
+    background-image: image(url("__HOME__/.config/wlogout/icons/sleep.png"));
     border-color: #e0af68; /* Yellow */
 }
 
 #hibernate {
-    background-image: image(url("/home/aditya/.config/wlogout/icons/hibernate.png"));
+    background-image: image(url("__HOME__/.config/wlogout/icons/hibernate.png"));
     border-color: #9ece6a; /* Green */
 }
 
 #shutdown {
-    background-image: image(url("/home/aditya/.config/wlogout/icons/power.png"));
+    background-image: image(url("__HOME__/.config/wlogout/icons/power.png"));
     border-color: #7dcfff; /* Blue */
 }
 
 #reboot {
-    background-image: image(url("/home/aditya/.config/wlogout/icons/restart.png"));
+    background-image: image(url("__HOME__/.config/wlogout/icons/restart.png"));
     border-color: #bb9af7; /* Lavender */
 }
