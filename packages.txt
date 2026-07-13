@@ -3,6 +3,11 @@
 # ║  Install with: pacman -S --needed - < packages.txt           ║
 # ╚═══════════════════════════════════════════════════════════════╝
 
+# ╔═══════════════════════════════════════════════════════════════╗
+# ║  Niri Minimal Dots - Package List                            ║
+# ║  Install with: pacman -S --needed - < packages.txt           ║
+# ╚═══════════════════════════════════════════════════════════════╝
+
 # ── Window Manager & Core ──────────────────────────────────────
 niri
 waybar
@@ -22,7 +27,6 @@ kitty
 fish
 starship
 fastfetch
-neofetch
 
 # ── Clipboard ──────────────────────────────────────────────────
 wl-clipboard
@@ -70,6 +74,7 @@ gtklock
 neovim
 git
 lazygit
+zed
 code
 python
 python-pip
@@ -115,4 +120,4 @@ cowsay
 figlet
 toilet
 sl
-zed
+neofetch
