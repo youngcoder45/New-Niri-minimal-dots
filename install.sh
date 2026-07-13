@@ -55,10 +55,15 @@ fi
 # ── Install AUR packages ──────────────────────────────────────
 log "Installing AUR packages..."
 yay -S --needed --noconfirm \
-    ttf-firacode-nerd \
-    papirus-icon-theme \
-    bibata-cursor-theme \
-    tokyo-night-gtk-theme 2>/dev/null || warn "Some AUR packages may have failed"
+    niri-git \
+    niri-settings-git \
+    niri-utils \
+    bibata-cursor-theme-bin \
+    brave-bin \
+    vesktop-bin \
+    sddm-sugar-candy-git \
+    pomoru \
+    2>/dev/null || warn "Some AUR packages may have failed"
 
 # ── Create Directories ────────────────────────────────────────
 log "Creating directories..."
@@ -89,11 +94,22 @@ for dir in "$CONFIG_DIR"/*/; do
 
     # Skip directories that aren't configs
     case "$app_name" in
-        .git|Screenshots|scripts|wallpapers) continue ;;
+        .git|Screenshots|wallpapers|local) continue ;;
     esac
 
     link_config "$dir" "$app_name"
 done
+
+# Link local/bin scripts
+if [ -d "$CONFIG_DIR/local/bin" ]; then
+    mkdir -p "$HOME/.local/bin"
+    for script in "$CONFIG_DIR/local/bin/"*; do
+        [ -f "$script" ] || continue
+        script_name=$(basename "$script")
+        ln -sfn "$script" "$HOME/.local/bin/$script_name"
+    done
+    log "Linked local/bin scripts"
+fi
 
 # ── Set Fish as Default Shell ──────────────────────────────────
 if [ "$SHELL" != "/usr/bin/fish" ]; then
@@ -103,17 +119,18 @@ if [ "$SHELL" != "/usr/bin/fish" ]; then
 fi
 
 # ── Enable Services ────────────────────────────────────────────
-log "Enabling user services..."
-systemctl --user enable --now mako 2>/dev/null || true
+log "Enabling services..."
+sudo systemctl enable sddm 2>/dev/null || true
 
 # ── Fix Hardcoded Paths ───────────────────────────────────────
 log "Fixing hardcoded paths..."
-find "$CONFIG_DIR" -type f \( -name "*.css" -o -name "*.kdl" -o -name "*.toml" \) \
+find "$CONFIG_DIR" -type f \( -name "*.css" -o -name "*.kdl" -o -name "*.toml" -o -name "*.ini" -o -name "*.sh" \) \
     -exec sed -i "s|__HOME__|$HOME|g" {} \; 2>/dev/null || true
 
 # ── Make Scripts Executable ────────────────────────────────────
 log "Setting script permissions..."
 find "$CONFIG_DIR" -name "*.sh" -exec chmod +x {} \; 2>/dev/null || true
+find "$CONFIG_DIR/local/bin" -type f -exec chmod +x {} \; 2>/dev/null || true
 
 # ── Done ───────────────────────────────────────────────────────
 echo ""
@@ -122,7 +139,7 @@ echo -e "║     Installation Complete!                ║"
 echo -e "╚═══════════════════════════════════════════╝${NC}"
 echo ""
 echo -e "  ${YELLOW}Next steps:${NC}"
-echo -e "  1. Log out and log back in (or reboot)"
+echo -e "  1. Reboot your system"
 echo -e "  2. Add wallpapers to ~/Pictures/wallpapers/"
 echo -e "  3. Enjoy your new desktop!"
 echo ""
