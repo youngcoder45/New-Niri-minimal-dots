@@ -1,0 +1,51 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+  "logo": {
+    "type": "chafa",
+    "source": "~/.config/fastfetch/logo.png",
+    "width": 32,
+    "height": 22,
+    "padding": {
+      "top": 1,
+      "right": 3,
+    },
+  },
+
+  "display": {
+    "separator": "  ",
+    "color": { "keys": "cyan" },
+    "key": { "width": 11 },
+  },
+
+  "modules": [
+    {
+      "type": "title",
+      "color": {
+        "user": "bright_cyan",
+        "at": "bright_black",
+        "host": "white",
+      },
+    },
+    { "type": "separator", "string": "──────────────────────────────────────" },
+    { "type": "os", "key": "󰣇  os" },
+    { "type": "kernel", "key": "󰌢  kernel" },
+    { "type": "uptime", "key": "  uptime" },
+    { "type": "packages", "key": "󰏗  pkgs" },
+    { "type": "separator", "string": "──────────────────────────────────────" },
+    { "type": "wm", "key": "󰖟  wm" },
+    { "type": "display", "key": "󰍺  screen" },
+    { "type": "theme", "key": "󰏘  theme" },
+    { "type": "icons", "key": "󰀻  icons" },
+    { "type": "cursor", "key": "󰳿  cursor" },
+    { "type": "terminal", "key": "󰅭  term" },
+    { "type": "shell", "key": "󰆍  shell" },
+    { "type": "separator", "string": "──────────────────────────────────────" },
+    { "type": "cpu", "key": "󰻠  cpu" },
+    { "type": "gpu", "key": "󰢮  gpu" },
+    { "type": "memory", "key": "󰍛  ram" },
+    { "type": "disk", "key": "󰋊  disk", "folders": "/" },
+    { "type": "separator", "string": "──────────────────────────────────────" },
+    "colors",
+  ],
+}
