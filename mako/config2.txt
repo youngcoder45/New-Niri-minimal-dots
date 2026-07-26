@@ -1,0 +1,54 @@
+# ╔══════════════════════════════════════════════╗
+# ║  mako/config — sakura rice                 ║
+# ╚══════════════════════════════════════════════╝
+
+sort=-time
+layer=overlay
+anchor=top-right
+
+# Geometry
+width=260
+height=90
+margin=14
+padding=8,8
+
+# Style
+background-color=#241c2cee
+text-color=#f5e6ee
+border-size=2
+border-color=#ff7eb3cc
+border-radius=8
+
+# Icons
+icons=1
+max-icon-size=44
+icon-path=/usr/share/icons/Papirus-Dark
+
+# Text
+font=JetBrainsMono Nerd Font 9
+markup=1
+actions=1
+format=<b>%s</b>\n%b
+
+# Behaviour
+default-timeout=5000
+ignore-timeout=0
+max-visible=5
+
+# Progress bar (für media notifications)
+[hidden]
+format=(+%i more)
+text-color=#c9a8bc
+
+[urgency=low]
+border-color=#b0aef0aa
+default-timeout=3000
+
+[urgency=normal]
+border-color=#ff7eb3cc
+default-timeout=5000
+
+[urgency=high]
+border-color=#f07178ff
+background-color=#2e1c2cee
+default-timeout=0
