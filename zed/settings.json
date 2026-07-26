@@ -39,8 +39,8 @@
     "trust_all_worktrees": true,
   },
 
-  "redact_private_values": false,
-  "disable_ai": false,
+  "redact_private_values": true,
+  "disable_ai": true,
   "show_edit_predictions": true,
   "edit_predictions": {
     "enabled_in_text_threads": false,
@@ -50,14 +50,14 @@
     "tool_permissions": {
       "tools": {
         "terminal": {
-          "default": "allow"
-        }
-      }
+          "default": "allow",
+        },
+      },
     },
     "default_model": {
       "provider": "google",
       "model": "gemini-2.5-flash",
-      "enable_thinking": true
+      "enable_thinking": true,
     },
     "favorite_models": [],
     "default_profile": "write",
