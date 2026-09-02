@@ -1,65 +1,54 @@
-# default theme for Mako notification daemon
+# ╔══════════════════════════════════════════════╗
+# ║  mako/config — sakura rice                 ║
+# ╚══════════════════════════════════════════════╝
 
-# Layout
-max-visible=5
+sort=-time
 layer=overlay
 anchor=top-right
-margin=8
+
+# Geometry
 width=260
 height=90
+margin=14
+padding=8,8
 
-# Styling (default)
-background-color=#1e1e2ee6
-text-color=#cdd6f4
-border-color=#45475a
-border-size=1
-border-radius=10
-padding=10
-
-# Font
-font=DejaVu Sans 10
+# Style
+background-color=#241c2cee
+text-color=#f5e6ee
+border-size=2
+border-color=#ff7eb3cc
+border-radius=8
 
 # Icons
-max-icon-size=48
-icon-path=/usr/share/icons/Adwaita
+icons=1
+max-icon-size=44
+icon-path=/usr/share/icons/Papirus-Dark
 
-# Timing
-default-timeout=8000
-ignore-timeout=1
+# Text
+font=JetBrainsMono Nerd Font 9
+markup=1
+actions=1
+format=<b>%s</b>\n%b
 
-# History (keep notifications for waybar script)
-max-history=50
+# Behaviour
+default-timeout=5000
+ignore-timeout=0
+max-visible=5
 
-# Grouping
-group-by=app-name
+# Progress bar (für media notifications)
+[hidden]
+format=(+%i more)
+text-color=#c9a8bc
 
-# Urgency levels
-# LOW (background noise)
 [urgency=low]
-background-color=#1e1e2ecc
-text-color=#6c7086
-border-color=#585b70
-default-timeout=2500
+border-color=#b0aef0aa
+default-timeout=3000
 
-# NORMAL (default)
 [urgency=normal]
-background-color=#1e1e2ee6
-text-color=#cdd6f4
-border-color=#89b4fa
+border-color=#ff7eb3cc
 default-timeout=5000
 
-# CRITICAL (strong)
-[urgency=critical]
-background-color=#1e1e2eff
-text-color=#f38ba8
-border-color=#f38ba8
-border-size=2
+[urgency=high]
+border-color=#f07178ff
+background-color=#2e1c2cee
 default-timeout=0
-
-
-
-[mode=do-not-disturb]
-invisible=1
-
-[mode=do-not-disturb app-name=notify-send]
-invisible=0

@@ -8,7 +8,6 @@ __pycache__/
 *.bak
 *.swp
 *.swo
-*~
 
 # OS files
 .DS_Store
@@ -31,3 +30,38 @@ target/
 # Misc
 .cache/
 *.log
+
+# Secrets & Personal Data
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+.ssh/
+.gnupg/
+passwords*
+credentials*
+tokens*
+*.token
+*.secret
+
+# Browser data
+BraveSoftware/
+mozilla/
+.firefox/
+.mozilla/
+
+# Application caches & state
+.local/share/Zeal/
+.local/share/Trash/
+.local/state/
+
+# Machine-specific
+.local/share/zed/
+.vscode/
+
+# Large binary files that shouldn't be in git
+*.deb
+*.rpm
+*.AppImage

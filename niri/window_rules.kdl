@@ -8,7 +8,7 @@ window-rule {
     // This regular expression is intentionally made as specific as possible,
     // since this is the default config, and we want no false positives.
     // You can get away with just app-id="wezterm" if you want.
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    match app-id=r#"^org\.wezfurlong\.wezterm$"#;
     default-column-width {}
 }
 
@@ -29,7 +29,7 @@ window-rule{
 }
 window-rule {
     match app-id="brave-browser"
-    opacity 0.9
+    opacity 0.8
     open-maximized true
     background-effect {
         blur true
@@ -62,6 +62,15 @@ window-rule {
 
 window-rule {
     match app-id="dev.zed.Zed"
+    opacity 0.8
+    open-maximized true
+    background-effect {
+        blur true
+    }
+}
+
+window-rule {
+    match app-id="org.mozilla.Thunderbird"
     opacity 0.8
     open-maximized true
     background-effect {
@@ -164,8 +173,8 @@ window-rule {
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
-    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
-    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#;
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#;
 
     block-out-from "screen-capture"
 

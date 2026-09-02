@@ -1,43 +1,10 @@
 [general]
-
-# Colors
-
-[colors.bright]
-black = '#21215F'
-blue = '#a9aefe'
-cyan = '#9BFECE'
-green = '#9BFECE'
-magenta = '#FD4663'
-red = '#FD4663'
-white = '#ffffff'
-yellow = '#fff59b'
-
-[colors.cursor]
-cursor = '#fff59b'
-text = '#070722'
-
-[colors.normal]
-black = '#11112d'
-blue = '#a9aefe'
-cyan = '#9BFECE'
-green = '#9BFECE'
-magenta = '#FD4663'
-red = '#FD4663'
-white = '#f3edf7'
-yellow = '#fff59b'
-
-[colors.primary]
-background = '#070722'
-foreground = '#f3edf7'
-
-[colors.selection]
-background = '#f3edf7'
-text = '#070722'
+live_config_reload = true
 
 [window]
 decorations = "None"
-padding = { x = 12, y = 12 }
-opacity = 0.9
+padding = { x = 10, y = 10 }
+opacity = 0.90
 
 [font]
 size = 9
@@ -54,8 +21,13 @@ style = "Bold"
 family = "FiraCode Nerd Font"
 style = "Italic"
 
+[font.bold_italic]
+family = "FiraCode Nerd Font"
+style = "Bold Italic"
+
 [scrolling]
-history = 3023
+history = 10000
+multiplier = 3
 
 [cursor]
 style = { shape = "Beam", blinking = "On" }
@@ -65,22 +37,41 @@ unfocused_hollow = true
 [mouse]
 hide_when_typing = true
 
-[selection]
-save_to_clipboard = false
-
 [bell]
 duration = 0
 
-[keyboard]
-bindings = [
-  { key = "C",       mods = "Control|Shift", action = "Copy"  },
-  { key = "V",       mods = "Control|Shift", action = "Paste" },
-  { key = "N",       mods = "Control|Shift", action = "SpawnNewInstance" },
-  { key = "Equals",  mods = "Control|Shift", action = "IncreaseFontSize" },
-  { key = "Minus",   mods = "Control",       action = "DecreaseFontSize" },
-  { key = "Key0",    mods = "Control",       action = "ResetFontSize"    },
-  { key = "Enter",   mods = "Shift",         chars = "\n" },
-]
-
 [terminal]
 shell = { program = "/usr/bin/fish" }
+
+# Colors: deep navy base with sunset-orange accents
+[colors.primary]
+background = "#0b1020"
+foreground = "#c8d3f5"
+
+[colors.cursor]
+text = "#0b1020"
+cursor = "#ffb86c"
+
+[colors.selection]
+text = "#0b1020"
+background = "#cba6f7"
+
+[colors.normal]
+black = "#1b2336"
+red = "#ff6e5e"
+green = "#7bd88f"
+yellow = "#ffb86c"
+blue = "#89b4fa"
+magenta = "#cba6f7"
+cyan = "#74c7ec"
+white = "#c8d3f5"
+
+[colors.bright]
+black = "#2a3452"
+red = "#ff6e5e"
+green = "#7bd88f"
+yellow = "#ffd29c"
+blue = "#a6bfff"
+magenta = "#f5c2e7"
+cyan = "#89dceb"
+white = "#ffffff"

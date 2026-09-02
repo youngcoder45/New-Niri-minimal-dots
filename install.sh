@@ -1,7 +1,7 @@
 #!/bin/bash
 # ╔═══════════════════════════════════════════════════════════════╗
-# ║  Niri Minimal Dots - Installation Script                     ║
-# ║  Fresh Arch → Clone → Run → Working Desktop                  ║
+# ║  Niri Dotfiles - Installation Script                        ║
+# ║  Fresh Arch → Clone → Run → Working Desktop                 ║
 # ╚═══════════════════════════════════════════════════════════════╝
 
 set -euo pipefail
@@ -32,7 +32,7 @@ fi
 
 echo -e "${BLUE}"
 echo "  ╔═══════════════════════════════════════╗"
-echo "  ║     Niri Minimal Dots Installer       ║"
+echo "  ║     Niri Dotfiles Installer           ║"
 echo "  ╚═══════════════════════════════════════╝"
 echo -e "${NC}"
 
@@ -63,13 +63,21 @@ yay -S --needed --noconfirm \
     vesktop-bin \
     sddm-sugar-candy-git \
     pomoru \
+    freesmlauncher-bin \
+    dracula-gtk-theme \
+    neofetch \
+    pipes.sh \
+    tty-clock \
+    femboysay \
     2>/dev/null || warn "Some AUR packages may have failed"
 
 # ── Create Directories ────────────────────────────────────────
 log "Creating directories..."
 mkdir -p "$HOME/.config"
+mkdir -p "$HOME/.local/bin"
 mkdir -p "$HOME/Pictures/wallpapers"
 mkdir -p "$HOME/Pictures/Screenshots"
+mkdir -p "$HOME/.config/xdg-desktop-portal"
 
 # ── Symlink Configurations ────────────────────────────────────
 log "Linking configurations to ~/.config/..."
@@ -94,13 +102,13 @@ for dir in "$CONFIG_DIR"/*/; do
 
     # Skip directories that aren't configs
     case "$app_name" in
-        .git|Screenshots|wallpapers|local) continue ;;
+        .git|Screenshots|wallpapers|local|nvim|xdg-desktop-portal) continue ;;
     esac
 
     link_config "$dir" "$app_name"
 done
 
-# Link local/bin scripts
+# ── Link Local Bin Scripts ────────────────────────────────────
 if [ -d "$CONFIG_DIR/local/bin" ]; then
     mkdir -p "$HOME/.local/bin"
     for script in "$CONFIG_DIR/local/bin/"*; do
@@ -110,6 +118,44 @@ if [ -d "$CONFIG_DIR/local/bin" ]; then
     done
     log "Linked local/bin scripts"
 fi
+
+# ── Install wallpapers ────────────────────────────────────────
+log "Installing wallpapers..."
+if [ -d "$CONFIG_DIR/wallpapers" ]; then
+    mkdir -p "$HOME/Pictures/wallpapers"
+    for wallpaper in "$CONFIG_DIR/wallpapers"/*; do
+        [ -f "$wallpaper" ] || continue
+        name=$(basename "$wallpaper")
+        [ "$name" = ".gitkeep" ] && continue
+        if [ ! -f "$HOME/Pictures/wallpapers/$name" ]; then
+            cp "$wallpaper" "$HOME/Pictures/wallpapers/$name"
+            log "Installed wallpaper: $name"
+        fi
+    done
+fi
+
+# ── Install MIME associations ─────────────────────────────────
+log "Installing MIME associations..."
+if [ -f "$CONFIG_DIR/mimeapps.list" ]; then
+    cp "$CONFIG_DIR/mimeapps.list" "$HOME/.config/mimeapps.list"
+    log "Installed mimeapps.list"
+fi
+
+# ── Install portal configuration ─────────────────────────────
+log "Installing portal configuration..."
+if [ -d "$CONFIG_DIR/xdg-desktop-portal" ]; then
+    mkdir -p "$HOME/.config/xdg-desktop-portal"
+    for conf in "$CONFIG_DIR/xdg-desktop-portal"/*.conf; do
+        [ -f "$conf" ] || continue
+        cp "$conf" "$HOME/.config/xdg-desktop-portal/$(basename "$conf")"
+        log "Installed portal config: $(basename "$conf")"
+    done
+fi
+
+# ── Fix Hardcoded Paths ───────────────────────────────────────
+log "Fixing hardcoded paths..."
+find "$CONFIG_DIR" -type f \( -name "*.css" -o -name "*.kdl" -o -name "*.toml" -o -name "*.ini" -o -name "*.sh" -o -name "*.jsonc" -o -name "*.json" -o -name "bookmarks" -o -name "*.conf" -o -name "layout" -o -name "flameshot.ini" -o -name "*.tres" \) \
+    -exec sed -i "s|__HOME__|$HOME|g" {} \; 2>/dev/null || true
 
 # ── Set Fish as Default Shell ──────────────────────────────────
 if [ "$SHELL" != "/usr/bin/fish" ]; then
@@ -121,11 +167,6 @@ fi
 # ── Enable Services ────────────────────────────────────────────
 log "Enabling services..."
 sudo systemctl enable sddm 2>/dev/null || true
-
-# ── Fix Hardcoded Paths ───────────────────────────────────────
-log "Fixing hardcoded paths..."
-find "$CONFIG_DIR" -type f \( -name "*.css" -o -name "*.kdl" -o -name "*.toml" -o -name "*.ini" -o -name "*.sh" -o -name "*.jsonc" -o -name "*.json" -o -name "bookmarks" -o -name "*.conf" -o -name "layout" -o -name "flameshot.ini" \) \
-    -exec sed -i "s|__HOME__|$HOME|g" {} \; 2>/dev/null || true
 
 # ── Make Scripts Executable ────────────────────────────────────
 log "Setting script permissions..."

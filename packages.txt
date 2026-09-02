@@ -1,20 +1,23 @@
 # ╔═══════════════════════════════════════════════════════════════╗
-# ║  Niri Minimal Dots - Package List                            ║
+# ║  Niri Dotfiles - Package List                                ║
 # ║  Install with: pacman -S --needed - < packages.txt           ║
 # ╚═══════════════════════════════════════════════════════════════╝
 
 # ── Window Manager & Core ──────────────────────────────────────
-niri
 waybar
 fuzzel
 mako
-wlogout
 swaybg
 nm-applet
 polkit-gnome
 gnome-keyring
+wlogout
 sddm
 nwg-look
+swaync
+wlsunset
+xwayland-satellite
+xdg-desktop-portal-gnome
 
 # ── Terminal & Shell ───────────────────────────────────────────
 alacritty
@@ -22,26 +25,31 @@ kitty
 fish
 starship
 fastfetch
+tmux
 
 # ── Clipboard ──────────────────────────────────────────────────
 wl-clipboard
 cliphist
 
 # ── Audio ──────────────────────────────────────────────────────
-pipewire
-pipewire-pulse
 pipewire-alsa
-wireplumber
+pipewire-pulse
+gst-plugin-pipewire
 pavucontrol
+playerctl
 cava
 
 # ── Video ──────────────────────────────────────────────────────
 mpv
 vlc
 
+# ── Lock Screen ───────────────────────────────────────────────
+gtklock
+gtklock-powerbar-module
+gtklock-userinfo-module
+
 # ── Brightness & Power ────────────────────────────────────────
 brightnessctl
-upower
 
 # ── Bluetooth ──────────────────────────────────────────────────
 bluez
@@ -50,20 +58,34 @@ bluez-utils
 # ── Network ────────────────────────────────────────────────────
 networkmanager
 network-manager-applet
+nm-connection-editor
+iw
+wireless_tools
+tailscale
 
 # ── Screenshots ────────────────────────────────────────────────
 flameshot
 grim
 slurp
-swappy
 imagemagick
 
 # ── File Manager ───────────────────────────────────────────────
 nnn
 nautilus
+gvfs-mtp
+file-roller
+tumbler
 
-# ── Lock Screen ────────────────────────────────────────────────
-gtklock
+# ── Image Viewers ──────────────────────────────────────────────
+loupe
+imv
+feh
+
+# ── PDF / Documents ────────────────────────────────────────────
+xournalpp
+ebook-tools
+poppler-qt6
+gnumeric
 
 # ── Browser ────────────────────────────────────────────────────
 firefox
@@ -72,50 +94,118 @@ firefox
 neovim
 git
 lazygit
-zed
-code
 python
 python-pip
+python-virtualenv
 nodejs
 npm
+fnm
 rust
+uv
 
 # ── System Monitor ─────────────────────────────────────────────
 bottom
 btop
 
+# ── System Utilities ───────────────────────────────────────────
+7zip
+unzip
+unrar
+ntfs-3g
+cifs-utils
+ddcutil
+smartmontools
+efibootmgr
+os-prober
+pacman-contrib
+reflector
+dnsmasq
+docker
+valkey
+postgresql
+
 # ── Terminal Utilities ─────────────────────────────────────────
 fd
 ripgrep
-fzf
+ripgrep-all
 zoxide
-unzip
-7zip
-unrar
-less
 tree
 tldr
-ripgrep-all
+tig
+ncdu
+gdu
+dust
+jq
+strace
 
 # ── Fonts ──────────────────────────────────────────────────────
 ttf-firacode-nerd
+ttf-jetbrains-mono-nerd
 noto-fonts-emoji
+font-manager
 
-# ── Misc ───────────────────────────────────────────────────────
+# ── Themes & Icons ─────────────────────────────────────────────
 papirus-icon-theme
-bibata-cursor-theme
 adw-gtk-theme
-dracula-gtk-theme
 qt6ct
 qt5ct
-font-manager
+
+# ── Misc GUI Applications ──────────────────────────────────────
 obsidian
 obs-studio
 godot
 pomoru
+extension-manager
+gnome-tweaks
+calcurse
+
+# ── Terminal Fun ───────────────────────────────────────────────
 cmatrix
 cowsay
 figlet
 toilet
 sl
-neofetch
+croc
+ddgr
+onefetch
+termdown
+mesa-utils
+
+# ── System Core ────────────────────────────────────────────────
+base
+base-devel
+linux
+linux-firmware
+linux-headers
+amd-ucode
+grub
+man-db
+man-pages
+nano
+wget
+openssh
+usbutils
+
+# ── Wayland / X11 ─────────────────────────────────────────────
+wayland-protocols
+wayland-utils
+xorg-xinit
+vulkan-radeon
+xf86-video-amdgpu
+
+# ── Qt/GTK Integration ────────────────────────────────────────
+polkit-qt6
+qca-qt6
+qtvirtualkeyboard
+qt6-speech
+kdsoap-ws-discovery-client
+kwindowsystem
+libkexiv2
+media-player-info
+sassc
+rtkit
+
+# ── Misc ───────────────────────────────────────────────────────
+android-tools
+expac
+zram-generator
