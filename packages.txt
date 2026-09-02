@@ -141,6 +141,7 @@ strace
 # ── Fonts ──────────────────────────────────────────────────────
 ttf-firacode-nerd
 ttf-jetbrains-mono-nerd
+ttf-nerd-fonts-symbols
 noto-fonts-emoji
 font-manager
 
