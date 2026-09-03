@@ -57,8 +57,8 @@ This repository reproduces a complete Niri desktop environment from a fresh Arch
 
 ```bash
 # Clone the repository
-git clone https://github.com/youngcoder45/Niri-minimal-dots.git
-cd Niri-minimal-dots
+git clone https://github.com/youngcoder45/New-Niri-minimal-dots
+cd New-Niri-minimal-dots
 
 # Run the installer (installs packages, symlinks configs, sets up everything)
 chmod +x install.sh
